@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.spriteWidth {
+  width: 100%;
+}
+
+#screen {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+#game {
+  grid-area: 1/1;
+  background-color: blue;
+
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  position: relative;
+}
+
+#game_background {
+  grid: 1/1;
+  background-image: url(./images/game_background_2.png);
+  background-color: aqua;
+  background-size: cover;
+}
+
+#orc_container {
+  width: 15%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+}
+
+#wizard_container {
+  transform-origin: center;
+  width: 10%;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+}
