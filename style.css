@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 img {
@@ -15,11 +16,12 @@ img {
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   aspect-ratio: 16 / 9;
-  width: 100%;
+  /* width: 100%; */
+  overflow: hidden;
 }
 
 #game {
-  grid-area: 1/1;
+  /* grid-area: 1/1; */
   background-color: blue;
 
   overflow: hidden;
@@ -31,7 +33,7 @@ img {
 }
 
 #game_background {
-  grid: 1/1;
+  /* grid: 1/1; */
   background-image: url(./images/game_background_2.png);
   background-color: aqua;
   background-size: cover;
@@ -44,6 +46,7 @@ img {
   position: absolute;
   top: 15%;
   left: 77%;
+  filter: drop-shadow(2px 2px 3px black);
 }
 
 #health_board {
@@ -51,6 +54,7 @@ img {
   position: absolute;
   top: 5%;
   left: 77%;
+  filter: drop-shadow(2px 2px 3px black);
 }
 
 #time_board {
@@ -58,6 +62,7 @@ img {
   position: absolute;
   top: 5%;
   left: 3%;
+  filter: drop-shadow(2px 2px 3px black);
 }
 
 /* Game element containers */
@@ -99,32 +104,51 @@ img {
 /* Animations */
 
 .orc {
-  animation-name: orc_run;
+  animation-name: orc_path_03;
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
-@keyframes orc_run {
+@keyframes orc_path_01 {
   0% {
-    transform: translate(0);
+    transform: translate(-100%);
   }
   100% {
-    transform: translate(70vw);
+    transform: translate(460%);
+  }
+}
+
+@keyframes orc_path_02 {
+  0% {
+    transform: translate(-100%, -70%);
+  }
+  100% {
+    transform: translate(460%, -20%);
+  }
+}
+
+@keyframes orc_path_03 {
+  0% {
+    transform: translate(-100%, 70%);
+    z-index: 5;
+  }
+  100% {
+    transform: translate(460%, 20%);
   }
 }
 
 .troll {
-  animation-name: troll_run;
+  animation-name: troll_path_01;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@keyframes troll_run {
+@keyframes troll_path_01 {
   0% {
     transform: translate(0);
   }
   100% {
-    transform: translate(70vw);
+    transform: translate(150%);
   }
 }
 
@@ -148,5 +172,22 @@ img {
   100% {
     transform: translate(0, 3%);
     filter: drop-shadow(0px 0px 5px #adeefc);
+  }
+}
+
+.energy {
+  animation-name: crystal_path_01;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes crystal_path_01 {
+  0% {
+    transform: translate(50%);
+  }
+
+  100% {
+    transform: translate(100%, 900%);
   }
 }
