@@ -13,22 +13,57 @@
         <div id="game_background"></div>
 
         <div id="game_elements">
-          <div id="orc_container">
-            <img class="spriteWidth" id="orc_sprite"
-              src="images\Orc\Orc_running.png"
+          <div id="orc_container" class="orc">
+            <img
+              class="spriteWidth"
+              id="orc_sprite"
+              src="images\Orc\orc_run.png"
               alt="orc_run"
             />
           </div>
+          <div id="troll_container" class="troll">
+            <img
+              class="spriteWidth"
+              id="troll_sprite"
+              src="images\Troll\troll_run.png"
+              alt="troll_run"
+            />
+          </div>
           <div id="wizard_container">
-            <img class="spriteWidth" id="wizard_sprite"
+            <img
+              class="spriteWidth"
+              id="wizard_sprite"
               src="images\Wizard\wizard_idle.png"
               alt="wizard_idle"
             />
           </div>
+          <div id="crystal_container" class="crystal">
+            <img
+              class="spriteWidth"
+              id="crystal_sprite"
+              src="images\crystal.png"
+              alt="crystal"
+            />
+          </div>
+          <div id="energy_container">
+            <img
+              class="spriteWidth"
+              id="energy_sprite"
+              src="images\energy_orb.png"
+              alt="energy_orb"
+            />
+          </div>
         </div>
-        
+
         <div id="game_foreground"></div>
-        <div id="game_ui"></div>
+
+        <div id="game_ui">
+          <div id="health_board"><img src="images\GUI\health_board.png" alt="health_board"></div>
+          <div id="mana_board">
+            <img src="images\GUI\mana_board.png" alt="mana_board" />
+          </div>
+          <div id="time_board"><img src="images\GUI\time_board.png" alt="time_board"></div>
+        </div>
       </div>
 
       <div id="start"></div>

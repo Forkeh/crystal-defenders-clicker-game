@@ -37,6 +37,31 @@ img {
   background-size: cover;
 }
 
+/* Game UI */
+
+#mana_board {
+  width: 20%;
+  position: absolute;
+  top: 15%;
+  left: 77%;
+}
+
+#health_board {
+  width: 20%;
+  position: absolute;
+  top: 5%;
+  left: 77%;
+}
+
+#time_board {
+  width: 25%;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+}
+
+/* Game element containers */
+
 #orc_container {
   width: 15%;
   position: absolute;
@@ -44,10 +69,84 @@ img {
   left: 0%;
 }
 
+#troll_container {
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: -30%;
+}
+
 #wizard_container {
-  transform-origin: center;
+  /* transform-origin: center; */
   width: 10%;
   position: absolute;
   top: 50%;
   left: 90%;
+}
+#crystal_container {
+  width: 15%;
+  position: absolute;
+  top: 45%;
+  left: 75%;
+}
+#energy_container {
+  width: 5%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+}
+
+/* Animations */
+
+.orc {
+  animation-name: orc_run;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+@keyframes orc_run {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(70vw);
+  }
+}
+
+.troll {
+  animation-name: troll_run;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes troll_run {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(70vw);
+  }
+}
+
+.crystal {
+  animation-name: crystal_float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes crystal_float {
+  0% {
+    transform: translate(0, 3%);
+    filter: drop-shadow(0px 0px 5px #adeefc);
+  }
+
+  50% {
+    transform: translate(0, 0%);
+    filter: drop-shadow(0px 0px 15px #adeefc);
+  }
+  100% {
+    transform: translate(0, 3%);
+    filter: drop-shadow(0px 0px 5px #adeefc);
+  }
 }
