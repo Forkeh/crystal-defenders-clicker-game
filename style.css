@@ -11,6 +11,8 @@ img {
   width: 100%;
 }
 
+/* ---------- Overall grid setup ---------- */
+
 #screen {
   display: grid;
   grid-template-columns: 100%;
@@ -38,6 +40,12 @@ img {
   background-color: aqua;
   background-size: cover;
 }
+#start {
+  grid: 1/1;
+  background-image: url(./images/GUI/window.png);
+  background-color: rgb(211, 0, 0);
+  background-size: cover;
+}
 
 /* Game UI */
 
@@ -49,12 +57,30 @@ img {
   filter: drop-shadow(2px 2px 3px black);
 }
 
+#mana_bar {
+  width: 15%;
+  position: absolute;
+  top: 16.6%;
+  left: 81.7%;
+  transform-origin: left;
+  transform: scaleX(90%);
+}
+
 #health_board {
   width: 20%;
   position: absolute;
   top: 5%;
   left: 77%;
   filter: drop-shadow(2px 2px 3px black);
+}
+
+#health_bar {
+  width: 15%;
+  position: absolute;
+  top: 7.2%;
+  left: 81.7%;
+  transform-origin: left;
+  transform: scaleX(90%);
 }
 
 #time_board {
@@ -65,7 +91,7 @@ img {
   filter: drop-shadow(2px 2px 3px black);
 }
 
-/* Game element containers */
+/* ---------- Game element containers ---------- */
 
 #orc_container {
   width: 15%;
@@ -83,10 +109,10 @@ img {
 
 #wizard_container {
   /* transform-origin: center; */
-  width: 10%;
+  width: 40%;
   position: absolute;
-  top: 50%;
-  left: 90%;
+  top: 40%;
+  left: 75%;
 }
 #crystal_container {
   width: 15%;
@@ -101,13 +127,35 @@ img {
   left: 50%;
 }
 
-/* Animations */
+/* ---------- Animations ---------- */
 
-.orc {
-  animation-name: orc_path_03;
-  animation-duration: 4s;
+.wizard_attack {
+  animation-name: wizard_attack;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes wizard_attack {
+  0% {
+    filter: brightness(100%);
+  }
+  2% {
+    filter: brightness(200%);
+  }
+  10% {
+    filter: brightness(100%);
+  }
+  100% {
+  }
+}
+
+.orc_run {
+  animation-name: orc_path_02;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
 }
 @keyframes orc_path_01 {
   0% {
@@ -137,11 +185,54 @@ img {
   }
 }
 
+.orc_attack {
+  animation-name: orc_attack;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes orc_attack {
+  0% {
+    transform: scale(100%);
+  }
+  80% {
+    transform: scale(105%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.orc_death {
+  animation-name: orc_death;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes orc_death {
+  0% {
+    opacity: 100%;
+    filter: brightness(500%);
+  }
+  10% {
+    filter: brightness(100%);
+  }
+  80% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
 .troll {
   animation-name: troll_path_01;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-fill-mode: both;
 }
 @keyframes troll_path_01 {
   0% {
@@ -176,18 +267,64 @@ img {
 }
 
 .energy {
-  animation-name: crystal_path_01;
-  animation-duration: 3s;
+  animation-name: energy_path_01;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 }
 
-@keyframes crystal_path_01 {
+.energy_click {
+  animation-name: energy_click;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.44, -0.36, 0.83, 0.67);
+  animation-fill-mode: both;
+}
+
+@keyframes energy_click {
   0% {
-    transform: translate(50%);
+    transform: scale(100%);
+    filter: brightness(100%);
+    filter: drop-shadow(0px 0px 5px #adeefc);
+  }
+  10% {
+    filter: drop-shadow(0px 0px 200px #adeefc);
+    filter: brightness(200%);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 50px #adeefc);
+    transform: scale(0%);
+  }
+}
+
+@keyframes energy_path_01 {
+  0% {
+    transform: translate(-1100%);
+  }
+  100% {
+    transform: translate(1000%);
+  }
+}
+
+#energy_sprite {
+  animation-name: energy_idle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes energy_idle {
+  0% {
+    transform: rotate(0deg) translateY(5px);
+    filter: drop-shadow(0px 0px 5px #ffff8b);
+  }
+  50% {
+    transform: translateY(-5px) rotate();
+    filter: drop-shadow(0px 0px 10px #ffff8b);
   }
 
   100% {
-    transform: translate(100%, 900%);
+    transform: rotate(360deg) translateY(5px);
+    filter: drop-shadow(0px 0px 5px #ffff8b);
   }
 }
