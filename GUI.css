@@ -1,0 +1,45 @@
+
+
+/* Game UI */
+
+#mana_board {
+  width: 20%;
+  position: absolute;
+  top: 15%;
+  left: 77%;
+  filter: drop-shadow(2px 2px 3px black);
+}
+
+#mana_bar {
+  width: 15%;
+  position: absolute;
+  top: 16.6%;
+  left: 81.7%;
+  transform-origin: left;
+  transform: scaleX(90%);
+}
+
+#health_board {
+  width: 20%;
+  position: absolute;
+  top: 5%;
+  left: 77%;
+  filter: drop-shadow(2px 2px 3px black);
+}
+
+#health_bar {
+  width: 15%;
+  position: absolute;
+  top: 7.2%;
+  left: 81.7%;
+  transform-origin: left;
+  transform: scaleX(90%);
+}
+
+#time_board {
+  width: 25%;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  filter: drop-shadow(2px 2px 3px black);
+}
