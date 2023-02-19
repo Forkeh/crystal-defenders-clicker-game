@@ -13,6 +13,7 @@
   position: absolute;
   top: 30%;
   left: -30%;
+  visibility: hidden;
 }
 
 #wizard_container {

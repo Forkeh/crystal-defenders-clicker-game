@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div id="game_foreground"></div>
+      <!-- <div id="game_foreground"></div> -->
 
       <div id="game_ui">
         <div id="health_board">
@@ -48,6 +48,7 @@
           <img class="spriteWidth" src="images\GUI\mana_board.png" alt="mana_board" />
         </div>
         <div id="time_board">
+          <div id="countdownText"></div>
           <img class="spriteWidth" src="images\GUI\time_board.png" alt="time_board" />
         </div>
         <div id="mana_bar">
@@ -57,15 +58,31 @@
     </div>
 
     <div id="start">
-      <div id="window">
+      <div id="start_window">
         <div id="start_text">
           <h1>Crystal Defender</h1>
           Press the button to the start the game!
         </div>
       </div>
     </div>
-    <div id="game_over"></div>
-    <div id="level_complete"></div>
+
+    <div id="game_over">
+      <div id="game_over_window">
+        <div id="game_over_text">
+          <h1>You've perished!</h1>
+          You failed to protect the kingdom!
+        </div>
+      </div>
+    </div>
+
+    <div id="win">
+      <div id="win_window">
+        <div id="win_text">
+          <h1>You win!</h1>
+          You defended the kingdom!
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

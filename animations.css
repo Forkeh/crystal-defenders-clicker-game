@@ -2,7 +2,7 @@
 
 .wizard_attack {
   animation-name: wizard_attack;
-  animation-duration: 1s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
@@ -80,7 +80,7 @@
 
 .orc_death {
   animation-name: orc_death;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: both;

@@ -1,7 +1,10 @@
 @import url(gameElements.css);
 @import url(animations.css);
 @import url(GUI.css);
-@import url(startScreen.css);
+@import url(screenStart.css);
+@import url(screenLose.css);
+@import url(screenWin.css);
+
 
 body {
   margin: 0;
