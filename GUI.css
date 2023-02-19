@@ -45,9 +45,8 @@
 #countdownText {
   width: 25%;
   position: absolute;
-  top: 0%;
+  top: -10%;
   left: 38%;
-  font-size: 25px;
+  font-size: 3.5vw;
   font-weight: 900;
-  
 }
