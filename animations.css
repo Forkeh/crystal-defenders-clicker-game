@@ -80,7 +80,7 @@
 
 .orc_death {
   animation-name: orc_death;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: both;

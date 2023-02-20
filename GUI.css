@@ -29,6 +29,17 @@
   filter: drop-shadow(2px 2px 3px black);
 }
 
+#healthText {
+  width: 77%;
+  position: absolute;
+  top: 0%;
+  left: 18%;
+  font-size: 3vw;
+  font-weight: 900;
+  color: rgb(255, 0, 128);
+  filter: drop-shadow(1px 1px 2px black);
+}
+
 #health_bar {
   width: 15%;
   position: absolute;
@@ -36,6 +47,7 @@
   left: 81.7%;
   transform-origin: left;
   transform: scaleX(90%);
+  visibility: hidden;
 }
 
 #time_board {
@@ -53,4 +65,5 @@
   left: 38%;
   font-size: 3.5vw;
   font-weight: 900;
+  filter: drop-shadow(1px 1px 2px black);
 }
