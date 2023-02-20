@@ -1,7 +1,7 @@
 window.addEventListener("load", start);
 
 // ---------- Game variables ---------- //
-let countdown = 60;
+let countdown = 600;
 let kills = 0;
 
 const orc1_container = document.querySelector("#orc_container");
@@ -12,12 +12,7 @@ function start() {
   console.log("START");
 
   countDown();
-
-  document.querySelector("#orc_sprite").addEventListener("click", orcClick);
-
-  document
-    .querySelector("#orc_container")
-    .addEventListener("animationend", orcAttack);
+  spawnOrc();
 }
 
 // ---------- Countdown ---------- //
@@ -45,23 +40,47 @@ function winScreen() {
 
 function orcClick() {
   console.log("CLICK ORC");
+
+  orc1_sprite.removeEventListener("mousedown", orcClick);
+
   orc1_container.classList.add("pauseAnimation");
-
-  orc1_sprite.removeEventListener("click", orcClick);
-
   orc1_sprite.classList.add("orc_death");
   orc1_sprite.classList.remove("orc_attack");
+
   orc1_sprite.setAttribute("src", "images/Orc/orc_death.png");
 
   setTimeout(() => {
     orc1_container.style.visibility = "hidden";
-    orc1_container.classList.remove("orc_run");
     orc1_sprite.classList.remove("orc_attack");
     orc1_sprite.classList.remove("orc_death");
-    resetOrc();
+    orc1_container.classList.remove("pauseAnimation");
+    spawnOrc();
+  }, 1000);
+
+  //Hvorfor skal der være timeout på for at tilføje orc_run?!
+  setTimeout(() => {
+    orc1_container.classList.remove("orc_run");
   }, 1000);
 
   kills++;
+  console.log(`Kills: ${kills}`);
+}
+
+function spawnOrc() {
+  console.log("SPAWN ORC");
+
+  //Hvorfor skal der være timeout på for at tilføje orc_run?!
+  setTimeout(() => {
+    orc1_container.classList.add("orc_run");
+    orc1_container.style.visibility = "visible";
+  }, 1000);
+
+  document.querySelector("#orc_sprite").addEventListener("mousedown", orcClick);
+
+  orc1_container.addEventListener("animationend", orcAttack);
+
+  orc1_container.classList.add("orc_run");
+  orc1_sprite.setAttribute("src", "images/Orc/orc_run.png");
 }
 
 function orcAttack() {
@@ -71,15 +90,6 @@ function orcAttack() {
 
   orc1_sprite.classList.add("orc_attack");
   orc1_sprite.setAttribute("src", "images/Orc/orc_attack.png");
-}
-
-function resetOrc() {
-  console.log("RESET ORC");
-
-  orc1_container.classList.remove("pauseAnimation");
-  orc1_container.style.visibility = "visible";
-  orc1_sprite.setAttribute("src", "images/Orc/orc_run.png");
-  orc1_container.classList.add("orc_run");
 }
 
 // ---------- Wizard attack animation ---------- //
