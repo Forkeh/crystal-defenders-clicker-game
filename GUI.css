@@ -1,5 +1,9 @@
 /* Game UI */
 
+#game_ui {
+  pointer-events: none;
+}
+
 #mana_board {
   width: 20%;
   position: absolute;

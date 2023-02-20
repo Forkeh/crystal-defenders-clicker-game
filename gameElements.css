@@ -22,12 +22,14 @@
   position: absolute;
   top: 40%;
   left: 75%;
+  pointer-events: none;
 }
 #crystal_container {
   width: 15%;
   position: absolute;
   top: 45%;
   left: 75%;
+  pointer-events: none;
 }
 #energy_container {
   width: 5%;

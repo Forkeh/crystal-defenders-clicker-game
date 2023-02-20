@@ -1,12 +1,30 @@
-// ---------- Game varaibles ---------- //
+window.addEventListener("load", start);
 
+// ---------- Game variables ---------- //
 let countdown = 60;
-const countdownDisplay = document.getElementById("countdownText");
 let kills = 0;
+
+const orc1_container = document.querySelector("#orc_container");
+const orc1_sprite = document.querySelector("#orc_sprite");
+
+// ---------- Game start ---------- //
+function start() {
+  console.log("START");
+
+  countDown();
+
+  document.querySelector("#orc_sprite").addEventListener("click", orcClick);
+
+  document
+    .querySelector("#orc_container")
+    .addEventListener("animationend", orcAttack);
+}
 
 // ---------- Countdown ---------- //
 
 function countDown() {
+  const countdownDisplay = document.querySelector("#countdownText");
+
   for (let i = countdown; i >= 0; i--) {
     setTimeout(() => {
       countdownDisplay.innerHTML = i;
@@ -17,31 +35,51 @@ function countDown() {
   }
 }
 
-countDown();
+// ---------- Show win screen ---------- //
 
 function winScreen() {
-  document.getElementById("win").style.visibility = "visible";
+  document.querySelector("#win").style.visibility = "visible";
 }
 
-// ---------- Click orc ---------- //
-
-document.querySelector("#orc_sprite").addEventListener("click", orcClick);
+// ---------- ORC FUNCTIONS ---------- //
 
 function orcClick() {
-  const container = document.querySelector("#orc_container");
-  const sprite = document.querySelector("#orc_sprite");
-  container.classList.add("pauseAnimation");
+  console.log("CLICK ORC");
+  orc1_container.classList.add("pauseAnimation");
 
-  sprite.removeEventListener("click", orcClick);
+  orc1_sprite.removeEventListener("click", orcClick);
 
-  sprite.classList.add("orc_death");
-  sprite.setAttribute("src", "images/Orc/orc_death.png");
+  orc1_sprite.classList.add("orc_death");
+  orc1_sprite.classList.remove("orc_attack");
+  orc1_sprite.setAttribute("src", "images/Orc/orc_death.png");
 
   setTimeout(() => {
-    container.style.visibility = "hidden";
+    orc1_container.style.visibility = "hidden";
+    orc1_container.classList.remove("orc_run");
+    orc1_sprite.classList.remove("orc_attack");
+    orc1_sprite.classList.remove("orc_death");
+    resetOrc();
   }, 1000);
 
   kills++;
+}
+
+function orcAttack() {
+  console.log("ORC ATTACK");
+
+  orc1_container.removeEventListener("animationend", orcAttack);
+
+  orc1_sprite.classList.add("orc_attack");
+  orc1_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+}
+
+function resetOrc() {
+  console.log("RESET ORC");
+
+  orc1_container.classList.remove("pauseAnimation");
+  orc1_container.style.visibility = "visible";
+  orc1_sprite.setAttribute("src", "images/Orc/orc_run.png");
+  orc1_container.classList.add("orc_run");
 }
 
 // ---------- Wizard attack animation ---------- //
