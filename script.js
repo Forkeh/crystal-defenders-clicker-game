@@ -1,10 +1,10 @@
 window.addEventListener("load", start);
 
 // ---------- Game variables ---------- //
-let countdown = 60;
+let countdown = 10;
 let kills = 0;
 let orcsAttacking = 0;
-let crystalHP = 100;
+let crystalHP = 10;
 
 const orc1_container = document.querySelector("#orc_container");
 const orc1_sprite = document.querySelector("#orc_sprite");
@@ -55,16 +55,16 @@ function crystalHealth() {
 
 function winScreen() {
   document.querySelector("#win").style.visibility = "visible";
-  orcsKilled();
+  document.querySelector(
+    "#orcs-killed-win"
+  ).innerHTML = `You killed ${kills} orcs!`;
 }
 
 function gameOverScreen() {
   document.querySelector("#game_over").style.visibility = "visible";
-  orcsKilled();
-}
-
-function orcsKilled() {
-  document.querySelector(".kills").innerHTML = `You killed ${kills} orcs!`;
+  document.querySelector(
+    "#orcs-killed-lose"
+  ).innerHTML = `You killed ${kills} orcs!`;
 }
 
 // ---------- ORC FUNCTIONS ---------- //
