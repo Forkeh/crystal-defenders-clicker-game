@@ -1,24 +1,30 @@
+"use strict";
+
 window.addEventListener("load", start);
 
-// ---------- Game variables ---------- //
-let countdown = 10;
+// ---------- GAME VARIABLES ---------- //
+let countdown = 60;
 let kills = 0;
 let orcsAttacking = 0;
-let crystalHP = 10;
+let crystalHP = 100;
+let mana = 3;
 
+const energyContainer = document.querySelector('#energy_container');
+const energySprite = document.querySelector('#energy_sprite');
 const orc1_container = document.querySelector("#orc_container");
 const orc1_sprite = document.querySelector("#orc_sprite");
 
-// ---------- Game start ---------- //
+// ---------- GAME START ---------- //
+
 function start() {
   console.log("START");
 
-  setInterval(crystalHealth, 500); //How fast crystal loses hp
+  setInterval(crystalHealth, 300); // How fast crystal loses hp
   countDown();
   spawnOrc();
 }
 
-// ---------- Countdown ---------- //
+// ---------- COUNTDOWN ---------- //
 
 function countDown() {
   const countdownDisplay = document.querySelector("#countdownText");
@@ -33,7 +39,7 @@ function countDown() {
   }
 }
 
-// ---------- Crystal health ---------- //
+// ---------- CRYSTAL HEALTH ---------- //
 
 function crystalHealth() {
   // console.log("CRYSTAL HEALTH: " + crystalHP);
@@ -51,7 +57,7 @@ function crystalHealth() {
   }
 }
 
-// ---------- Show game screens ---------- //
+// ---------- SHOW GAME SCREENS ---------- //
 
 function winScreen() {
   document.querySelector("#win").style.visibility = "visible";
@@ -76,21 +82,22 @@ function orcClick() {
 
   orc1_container.classList.add("pauseAnimation");
   // orc1_sprite.classList.add("orc_death");
+  void orc1_sprite.offsetLeft;
   orc1_sprite.classList.remove("orc_attack");
 
   orc1_sprite.setAttribute("src", "images/Orc/orc_death.png");
 
   setTimeout(() => {
     orc1_container.style.visibility = "hidden";
+    void orc1_container.offsetLeft;
     orc1_sprite.classList.remove("orc_death");
     orc1_container.classList.remove("pauseAnimation");
+    orc1_container.classList.remove("orc_run");
     spawnOrc();
   }, 1500);
 
-  //Hvorfor skal der være timeout på for at tilføje orc_run?!
-  setTimeout(() => {
-    orc1_container.classList.remove("orc_run");
-  }, 1500);
+  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
+  setTimeout(() => {}, 1500);
 
   kills++;
   console.log(`Kills: ${kills}`);
@@ -103,11 +110,9 @@ function orcClick() {
 function spawnOrc() {
   console.log("SPAWN ORC");
 
-  //Hvorfor skal der være timeout på for at tilføje orc_run?!
+  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   setTimeout(() => {
-    orc1_container.offsetLeft;
     orc1_container.classList.add("orc_run");
-
     orc1_container.style.visibility = "visible";
 
     orc1_sprite.setAttribute("src", "images/Orc/orc_run.png");
@@ -129,7 +134,8 @@ function orcAttack() {
   orc1_sprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
 
-// ---------- Wizard attack animation ---------- //
+
+// ---------- WIZARD ATTACK ---------- //
 
 document.addEventListener("click", wizardAttack);
 
@@ -145,4 +151,26 @@ function wizardAttack() {
     document.addEventListener("click", wizardAttack);
     sprite.classList.remove("wizard_attack");
   }, 400);
+}
+
+
+// ---------- MANA ORB ---------- //
+
+document.querySelector('#energy_sprite').addEventListener('mousedown', clickOrb);
+
+function clickOrb() {
+  console.log('CLICK ORB: ' + mana + ' mana');
+
+  if(mana < 3) {
+mana++
+  }
+
+  document
+    .querySelector("#energy_sprite")
+    .removeEventListener("mousedown", clickOrb);
+
+
+  energyContainer.classList.add('pauseAnimation');
+  energySprite.classList.add('energy_click');
+
 }
