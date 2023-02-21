@@ -182,17 +182,19 @@
 
 @keyframes energy_click {
   0% {
-    transform: scale(100%);
-    filter: brightness(1000%);
-    filter: drop-shadow(0px 0px 5px #adeefc);
+    transform: scale(100%) rotate(0deg);
+    filter: drop-shadow(0px 0px 5px #fffd86);
   }
   10% {
-    filter: drop-shadow(0px 0px 200px #adeefc);
     filter: brightness(200%);
+    transform: scale(130%);
+    filter: drop-shadow(0px 0px 10px #fffd86);
+    filter: blur(1px);
   }
   100% {
-    filter: drop-shadow(0px 0px 50px #adeefc);
-    transform: scale(0%);
+    filter: brightness(300%);
+    filter: drop-shadow(0px 0px 10px #fffd86);
+    transform: scale(0%) rotate(600deg);
   }
 }
 

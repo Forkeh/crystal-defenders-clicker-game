@@ -21,10 +21,14 @@ function start() {
   console.log("START");
 
   setInterval(crystalHealth, 300); // How fast crystal loses hp
+
+  document.querySelector("#game").addEventListener("mousedown", clickScreen);
+
   countDown();
   spawnOrc();
   spawnOrb();
-  document.querySelector("#game").addEventListener("mousedown", clickScreen);
+  
+
 }
 
 // ---------- COUNTDOWN ---------- //
@@ -81,36 +85,40 @@ function gameOverScreen() {
 function orcClick() {
   console.log("CLICK ORC");
 
-  orc1_sprite.removeEventListener("mousedown", orcClick);
+  if(mana > 0) {
+    orc1_sprite.removeEventListener("mousedown", orcClick);
+  
+    orc1_container.classList.add("pauseAnimation");
+    // orc1_sprite.classList.add("orc_death");
+    void orc1_sprite.offsetLeft;
+    orc1_sprite.classList.remove("orc_attack");
+  
+    orc1_sprite.setAttribute("src", "images/Orc/orc_death.png");
+  
+    setTimeout(() => {
+      orc1_container.style.visibility = "hidden";
+      void orc1_container.offsetLeft;
+      orc1_sprite.classList.remove("orc_death");
+      orc1_container.classList.remove("pauseAnimation");
+      orc1_container.classList.remove("orc_run");
+      spawnOrc();
+    }, 1500);
+  
+    //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
+  
+    kills++;
+    console.log(`Kills: ${kills}`);
+  
+    if (orcsAttacking > 0) {
+      orcsAttacking--;
+    }
 
-  orc1_container.classList.add("pauseAnimation");
-  // orc1_sprite.classList.add("orc_death");
-  void orc1_sprite.offsetLeft;
-  orc1_sprite.classList.remove("orc_attack");
-
-  orc1_sprite.setAttribute("src", "images/Orc/orc_death.png");
-
-  setTimeout(() => {
-    orc1_container.style.visibility = "hidden";
-    void orc1_container.offsetLeft;
-    orc1_sprite.classList.remove("orc_death");
-    orc1_container.classList.remove("pauseAnimation");
-    orc1_container.classList.remove("orc_run");
-    spawnOrc();
-  }, 1500);
-
-  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
-
-  kills++;
-  console.log(`Kills: ${kills}`);
-
-  if (orcsAttacking > 0) {
-    orcsAttacking--;
   }
+
 }
 
 function spawnOrc() {
-  console.log("SPAWN ORC");
+  // console.log("SPAWN ORC");
 
   //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   setTimeout(() => {
@@ -138,18 +146,14 @@ function orcAttack() {
 
 // ---------- WIZARD ATTACK ---------- //
 
-document.addEventListener("click", wizardAttack);
-
 function wizardAttack() {
+  
   const sprite = document.querySelector("#wizard_sprite");
-  document.removeEventListener("click", wizardAttack);
-
   sprite.classList.add("wizard_attack");
   sprite.setAttribute("src", "images/Wizard/wizard_attack.png");
 
   setTimeout(() => {
     sprite.setAttribute("src", "images/Wizard/wizard_idle.png");
-    document.addEventListener("click", wizardAttack);
     sprite.classList.remove("wizard_attack");
   }, 400);
 }
@@ -157,10 +161,9 @@ function wizardAttack() {
 // ---------- MANA ORB ---------- //
 
 function clickOrb() {
-  console.log("CLICK ORB: " + mana + " mana");
   orbClicked = true;
-  mana = 4;
   fullMana();
+  console.log("CLICK ORB: " + mana + " mana");
 
   energySprite.removeEventListener("mousedown", clickOrb);
 
@@ -172,7 +175,7 @@ function clickOrb() {
   energySprite.addEventListener("animationend", resetOrb);
 
   function resetOrb() {
-    console.log("RESET ORB");
+    // console.log("RESET ORB");
     energyContainer.style.visibility = "hidden";
     energyContainer.classList.remove("pauseAnimation");
     energyContainer.classList.remove("energy_move");
@@ -182,7 +185,7 @@ function clickOrb() {
 }
 
 function spawnOrb() {
-  console.log("SPAWN ORB");
+  // console.log("SPAWN ORB");
 
   void energyContainer.offsetLeft;
   energyContainer.style.visibility = "visible";
@@ -195,9 +198,10 @@ function spawnOrb() {
 // ---------- CLICK SCREEN AND MANA ---------- //
 
 function clickScreen() {
-  console.log("CLICK SCREEN");
+  // console.log("CLICK SCREEN");
   if (orbClicked === true) {
   } else if (mana > 0) {
+    wizardAttack();
     decrementMana();
   }
   orbClicked = false;
@@ -207,7 +211,7 @@ function decrementMana() {
   document.querySelector("#mana" + mana).classList.remove("active_mana");
   document.querySelector("#mana" + mana).classList.add("inactive_mana");
   mana--;
-  console.log("DISPLAY MANA: " + mana);
+  console.log("CURRENT MANA: " + mana);
 }
 
 function fullMana() {
@@ -220,5 +224,5 @@ function fullMana() {
   document.querySelector("#mana3").classList.add("active_mana");
   document.querySelector("#mana4").classList.remove("inactive_mana");
   document.querySelector("#mana4").classList.add("active_mana");
-  console.log("FULL MANA: " + mana);
+  // console.log("FULL MANA: " + mana);
 }
