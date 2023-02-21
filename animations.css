@@ -147,15 +147,28 @@
   animation-name: energy_path_01;
   animation-duration: 5s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes energy_path_01 {
   0% {
-    transform: translate(-1100%);
+    transform: translateX(-300%);
+    top: 10%;
+  }
+  25% {
+    top: 30%
+  }
+  
+  50% {
+    top: 10%;
+  }
+
+  75% {
+    top: 30%
   }
   100% {
-    transform: translate(1000%);
+    transform: translateX(1900%);
+    top: 20%;
   }
 }
 

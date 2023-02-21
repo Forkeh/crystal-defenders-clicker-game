@@ -22,6 +22,7 @@ function start() {
   setInterval(crystalHealth, 300); // How fast crystal loses hp
   countDown();
   spawnOrc();
+  spawnOrb();
 }
 
 // ---------- COUNTDOWN ---------- //
@@ -97,7 +98,6 @@ function orcClick() {
   }, 1500);
 
   //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
-  setTimeout(() => {}, 1500);
 
   kills++;
   console.log(`Kills: ${kills}`);
@@ -119,7 +119,7 @@ function spawnOrc() {
     orc1_container.addEventListener("animationend", orcAttack);
   }, 1000);
 
-  document.querySelector("#orc_sprite").addEventListener("mousedown", orcClick);
+  orc1_sprite.addEventListener("mousedown", orcClick);
 }
 
 function orcAttack() {
@@ -156,7 +156,6 @@ function wizardAttack() {
 
 // ---------- MANA ORB ---------- //
 
-document.querySelector('#energy_sprite').addEventListener('mousedown', clickOrb);
 
 function clickOrb() {
   console.log('CLICK ORB: ' + mana + ' mana');
@@ -165,12 +164,37 @@ function clickOrb() {
 mana++
   }
 
-  document
-    .querySelector("#energy_sprite")
-    .removeEventListener("mousedown", clickOrb);
-
+  energySprite.removeEventListener("mousedown", clickOrb);
 
   energyContainer.classList.add('pauseAnimation');
+  energySprite.classList.remove("energy_idle");
+  
   energySprite.classList.add('energy_click');
+  
+  energySprite.addEventListener('animationend', resetOrb);
 
+  function resetOrb() {
+    console.log("RESET ORB");
+    energyContainer.style.visibility = "hidden";
+    energyContainer.classList.remove("pauseAnimation");
+    energyContainer.classList.remove("energy_move");
+    energySprite.classList.remove("energy_click");
+    spawnOrb();
+  }
+  
+  
+}
+
+function spawnOrb() {
+  console.log('SPAWN ORB');
+  
+  void energyContainer.offsetLeft;
+  energyContainer.style.visibility='visible';  
+  energySprite.addEventListener("mousedown", clickOrb);
+  energyContainer.classList.add('energy_move');
+  energySprite.classList.add('energy_idle');
+  setTimeout(() => {
+    
+  }, 100);
+  
 }
