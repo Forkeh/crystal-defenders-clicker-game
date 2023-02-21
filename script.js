@@ -8,6 +8,7 @@ let countdown = 600;
 let mana = 4;
 let kills = 0;
 let orcsAttacking = 0;
+let orbClicked = false;
 
 const energyContainer = document.querySelector("#energy_container");
 const energySprite = document.querySelector("#energy_sprite");
@@ -157,6 +158,7 @@ function wizardAttack() {
 
 function clickOrb() {
   console.log("CLICK ORB: " + mana + " mana");
+  orbClicked = true;
   mana = 4;
   fullMana();
 
@@ -194,10 +196,11 @@ function spawnOrb() {
 
 function clickScreen() {
   console.log("CLICK SCREEN");
-
-  if (mana > 0) {
+  if (orbClicked === true) {
+  } else if (mana > 0) {
     decrementMana();
   }
+  orbClicked = false;
 }
 
 function decrementMana() {
