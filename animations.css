@@ -219,7 +219,42 @@
   }
 }
 
-/* ---------- Global triggers ---------- */
+/* ---------- Mana icons ---------- */
+.active_mana {
+  animation-name: active_mana;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  filter: drop-shadow(0px 0px 5px rgb(255, 0, 0));
+
+}
+
+@keyframes active_mana {
+  0% {
+    transform: scale(105%);
+    filter: drop-shadow(0px 0px 6px #adeefc)brightness(120%);
+  }
+  
+  50% {
+    filter: drop-shadow(0px 0px 3px #adeefc)brightness(100%);
+    transform: scale(100%);
+  }
+  100% {
+    transform: scale(105%);
+    filter: drop-shadow(0px 0px 6px #adeefc)brightness(120%);
+  }
+}
+
+.inactive_mana {
+  animation-name: inactive_mana;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+filter: grayscale(100%) opacity(90%) brightness(50%);
+}
+
+
+/* ---------- Global anim triggers ---------- */
 
 .pauseAnimation {
   animation-play-state: paused;

@@ -3,14 +3,14 @@
 window.addEventListener("load", start);
 
 // ---------- GAME VARIABLES ---------- //
-let countdown = 60;
+let crystalHP = 1000;
+let countdown = 600;
+let mana = 4;
 let kills = 0;
 let orcsAttacking = 0;
-let crystalHP = 100;
-let mana = 3;
 
-const energyContainer = document.querySelector('#energy_container');
-const energySprite = document.querySelector('#energy_sprite');
+const energyContainer = document.querySelector("#energy_container");
+const energySprite = document.querySelector("#energy_sprite");
 const orc1_container = document.querySelector("#orc_container");
 const orc1_sprite = document.querySelector("#orc_sprite");
 
@@ -23,6 +23,7 @@ function start() {
   countDown();
   spawnOrc();
   spawnOrb();
+  document.querySelector("#game").addEventListener("mousedown", clickScreen);
 }
 
 // ---------- COUNTDOWN ---------- //
@@ -134,7 +135,6 @@ function orcAttack() {
   orc1_sprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
 
-
 // ---------- WIZARD ATTACK ---------- //
 
 document.addEventListener("click", wizardAttack);
@@ -153,25 +153,21 @@ function wizardAttack() {
   }, 400);
 }
 
-
 // ---------- MANA ORB ---------- //
 
-
 function clickOrb() {
-  console.log('CLICK ORB: ' + mana + ' mana');
-
-  if(mana < 3) {
-mana++
-  }
+  console.log("CLICK ORB: " + mana + " mana");
+  mana = 4;
+  fullMana();
 
   energySprite.removeEventListener("mousedown", clickOrb);
 
-  energyContainer.classList.add('pauseAnimation');
+  energyContainer.classList.add("pauseAnimation");
   energySprite.classList.remove("energy_idle");
-  
-  energySprite.classList.add('energy_click');
-  
-  energySprite.addEventListener('animationend', resetOrb);
+
+  energySprite.classList.add("energy_click");
+
+  energySprite.addEventListener("animationend", resetOrb);
 
   function resetOrb() {
     console.log("RESET ORB");
@@ -181,20 +177,45 @@ mana++
     energySprite.classList.remove("energy_click");
     spawnOrb();
   }
-  
-  
 }
 
 function spawnOrb() {
-  console.log('SPAWN ORB');
-  
+  console.log("SPAWN ORB");
+
   void energyContainer.offsetLeft;
-  energyContainer.style.visibility='visible';  
+  energyContainer.style.visibility = "visible";
   energySprite.addEventListener("mousedown", clickOrb);
-  energyContainer.classList.add('energy_move');
-  energySprite.classList.add('energy_idle');
-  setTimeout(() => {
-    
-  }, 100);
-  
+  energyContainer.classList.add("energy_move");
+  energySprite.classList.add("energy_idle");
+  setTimeout(() => {}, 100);
+}
+
+// ---------- CLICK SCREEN AND MANA ---------- //
+
+function clickScreen() {
+  console.log("CLICK SCREEN");
+
+  if (mana > 0) {
+    decrementMana();
+  }
+}
+
+function decrementMana() {
+  document.querySelector("#mana" + mana).classList.remove("active_mana");
+  document.querySelector("#mana" + mana).classList.add("inactive_mana");
+  mana--;
+  console.log("DISPLAY MANA: " + mana);
+}
+
+function fullMana() {
+  mana = 4;
+  document.querySelector("#mana1").classList.remove("inactive_mana");
+  document.querySelector("#mana1").classList.add("active_mana");
+  document.querySelector("#mana2").classList.remove("inactive_mana");
+  document.querySelector("#mana2").classList.add("active_mana");
+  document.querySelector("#mana3").classList.remove("inactive_mana");
+  document.querySelector("#mana3").classList.add("active_mana");
+  document.querySelector("#mana4").classList.remove("inactive_mana");
+  document.querySelector("#mana4").classList.add("active_mana");
+  console.log("FULL MANA: " + mana);
 }

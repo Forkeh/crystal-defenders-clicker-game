@@ -5,21 +5,17 @@
 }
 
 #mana_board {
-  width: 20%;
+  display: flex;
+  margin-block-start: .2em;
+  /* width: 20%; */
   position: absolute;
   top: 15%;
-  left: 77%;
-  filter: drop-shadow(2px 2px 3px black);
+  left: 79%;
+}
+.manaIcons {
+  width: 20%;
 }
 
-#mana_bar {
-  width: 15%;
-  position: absolute;
-  top: 16.6%;
-  left: 81.7%;
-  transform-origin: left;
-  transform: scaleX(90%);
-}
 
 #health_board {
   width: 20%;
