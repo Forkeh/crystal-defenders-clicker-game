@@ -33,3 +33,13 @@
 #start_text {
   text-align: center;
 }
+
+
+#startGameButton {
+  position: absolute;
+  width: 40%;
+  bottom: -40%;
+  right: 30%;
+  font-size: 3vw;
+  border-radius: 10px;
+}

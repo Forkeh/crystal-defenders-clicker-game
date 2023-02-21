@@ -27,8 +27,6 @@ function start() {
   countDown();
   spawnOrc();
   spawnOrb();
-  
-
 }
 
 // ---------- COUNTDOWN ---------- //
@@ -56,11 +54,20 @@ function crystalHealth() {
 
   if (orcsAttacking > 0) {
     crystalHP--;
+    crystalAttacked();
+  } else {
+    document.querySelector("#crystal_sprite").classList.remove("crystal_attacked");
   }
   if (crystalHP === 0) {
     console.log("YOU LOSE");
     gameOverScreen();
     return;
+  }
+}
+
+function crystalAttacked() {
+  if (orcsAttacking > 0) {
+    document.querySelector("#crystal_sprite").classList.add("crystal_attacked");
   }
 }
 
@@ -85,16 +92,16 @@ function gameOverScreen() {
 function orcClick() {
   console.log("CLICK ORC");
 
-  if(mana > 0) {
+  if (mana > 0) {
     orc1_sprite.removeEventListener("mousedown", orcClick);
-  
+
     orc1_container.classList.add("pauseAnimation");
     // orc1_sprite.classList.add("orc_death");
     void orc1_sprite.offsetLeft;
     orc1_sprite.classList.remove("orc_attack");
-  
+
     orc1_sprite.setAttribute("src", "images/Orc/orc_death.png");
-  
+
     setTimeout(() => {
       orc1_container.style.visibility = "hidden";
       void orc1_container.offsetLeft;
@@ -103,18 +110,16 @@ function orcClick() {
       orc1_container.classList.remove("orc_run");
       spawnOrc();
     }, 1500);
-  
+
     //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
-  
+
     kills++;
     console.log(`Kills: ${kills}`);
-  
+
     if (orcsAttacking > 0) {
       orcsAttacking--;
     }
-
   }
-
 }
 
 function spawnOrc() {
@@ -147,7 +152,6 @@ function orcAttack() {
 // ---------- WIZARD ATTACK ---------- //
 
 function wizardAttack() {
-  
   const sprite = document.querySelector("#wizard_sprite");
   sprite.classList.add("wizard_attack");
   sprite.setAttribute("src", "images/Wizard/wizard_attack.png");
@@ -226,3 +230,5 @@ function fullMana() {
   document.querySelector("#mana4").classList.add("active_mana");
   // console.log("FULL MANA: " + mana);
 }
+
+

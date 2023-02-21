@@ -118,26 +118,47 @@
 }
 
 /* ---------- Crystal animations ---------- */
-.crystal {
-  animation-name: crystal_float;
+.crystal_idle {
+  animation-name: crystal_idle;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
-@keyframes crystal_float {
+@keyframes crystal_idle {
   0% {
     transform: translate(0, 3%);
     filter: drop-shadow(0px 0px 5px #adeefc);
   }
 
   50% {
-    transform: translate(0, 0%);
+    transform: translate(0, 0%) scale(103%);
     filter: drop-shadow(0px 0px 15px #adeefc);
   }
   100% {
     transform: translate(0, 3%);
     filter: drop-shadow(0px 0px 5px #adeefc);
+  }
+}
+
+.crystal_attacked {
+  animation-name: crystal_attacked;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes crystal_attacked {
+  0% {
+    transform: translate(0, 1%) rotate(-1deg);
+  }
+
+  50% {
+    transform: translate(0, 0%) rotate(1deg);
+    filter: sepia(50%);
+  }
+  100% {
+    transform: translate(0, 1%) rotate(-1deg);
   }
 }
 
@@ -156,15 +177,15 @@
     top: 10%;
   }
   25% {
-    top: 30%
+    top: 30%;
   }
-  
+
   50% {
     top: 10%;
   }
 
   75% {
-    top: 30%
+    top: 30%;
   }
   100% {
     transform: translateX(1900%);
@@ -228,22 +249,21 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   filter: drop-shadow(0px 0px 5px rgb(255, 0, 0));
-
 }
 
 @keyframes active_mana {
   0% {
     transform: scale(105%);
-    filter: drop-shadow(0px 0px 6px #adeefc)brightness(120%);
+    filter: drop-shadow(0px 0px 6px #adeefc) brightness(120%);
   }
-  
+
   50% {
-    filter: drop-shadow(0px 0px 3px #adeefc)brightness(100%);
+    filter: drop-shadow(0px 0px 3px #adeefc) brightness(100%);
     transform: scale(100%);
   }
   100% {
     transform: scale(105%);
-    filter: drop-shadow(0px 0px 6px #adeefc)brightness(120%);
+    filter: drop-shadow(0px 0px 6px #adeefc) brightness(120%);
   }
 }
 
@@ -252,9 +272,8 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-filter: grayscale(100%) opacity(90%) brightness(50%);
+  filter: grayscale(100%) opacity(90%) brightness(50%);
 }
-
 
 /* ---------- Global anim triggers ---------- */
 
