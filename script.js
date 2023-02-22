@@ -4,6 +4,7 @@ window.addEventListener("load", start);
 
 // ---------- GAME VARIABLES ---------- //
 let crystalHP = 10;
+let crystalHPSpeed = 300;
 let countdown = 10;
 let mana = 4;
 let kills = 0;
@@ -12,6 +13,7 @@ let orbClicked = false;
 let stopFunction = false;
 let orc1SpawnTimerId;
 let orc2SpawnTimerId;
+let crystalHPTimerId;
 
 // ---------- GAME ELEMENTS ---------- //
 const energyContainer = document.querySelector("#energy_container");
@@ -26,7 +28,7 @@ const orc2_sprite = document.querySelector("#orc2_sprite");
 function start() {
   console.log("START");
 
-  setInterval(crystalHealth, 300); // How fast crystal loses hp
+  crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 
   document.querySelector("#game").addEventListener("mousedown", clickScreen);
 

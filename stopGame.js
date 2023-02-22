@@ -4,6 +4,7 @@ function stopGame() {
   console.log("STOP GAME");
   clearTimeout(orc1SpawnTimerId);
   clearTimeout(orc2SpawnTimerId);
+  clearTimeout(crystalHPTimerId);
   orc1_container.removeEventListener("animationend", orc1Attack);
   orc1_sprite.removeEventListener("animationend", orc1Attack);
   orc2_container.removeEventListener("animationend", orc2Attack);
