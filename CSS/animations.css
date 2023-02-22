@@ -12,11 +12,12 @@
     filter: brightness(100%);
   }
   2% {
-    filter: brightness(200%);
+    filter: brightness(200%) drop-shadow(-2px -5px 10px rgb(173, 245, 255));
   }
   10% {
     filter: brightness(100%);
   }
+
   100% {
   }
 }
@@ -204,7 +205,7 @@
 
 .energy_click {
   animation-name: energy_click;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.44, -0.36, 0.83, 0.67);
   animation-fill-mode: both;
@@ -216,15 +217,12 @@
     filter: drop-shadow(0px 0px 5px #fffd86);
   }
   10% {
-    filter: brightness(200%);
     transform: scale(130%);
-    filter: drop-shadow(0px 0px 10px #fffd86);
-    filter: blur(1px);
+    filter: blur(1px) drop-shadow(0px 0px 10px #fffd86) brightness(200%);
   }
   100% {
-    filter: brightness(300%);
-    filter: drop-shadow(0px 0px 10px #fffd86);
     transform: scale(0%) rotate(600deg);
+    filter: brightness(300%) drop-shadow(0px 0px 10px #fffd86);
   }
 }
 
@@ -252,6 +250,7 @@
 }
 
 /* ---------- Mana icons ---------- */
+
 .active_mana {
   animation-name: active_mana;
   animation-duration: 3s;
@@ -276,12 +275,50 @@
   }
 }
 
+.full_mana {
+  animation-name: full_mana;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes full_mana {
+  0% {
+    filter: grayscale(100%) opacity(90%) brightness(50%);
+    transform: scale(90%);
+  }
+  2% {
+    filter: drop-shadow(0px 0px 15px #adeefc) brightness(300%) grayscale(0%);
+    transform: scale(150%);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 6px #adeefc) brightness(120%);
+    transform: scale(100%);
+  }
+}
+
 .inactive_mana {
   animation-name: inactive_mana;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  filter: grayscale(100%) opacity(90%) brightness(50%);
+  animation-fill-mode: both;
+}
+
+@keyframes inactive_mana {
+  0% {
+    filter: drop-shadow(0px 0px 6px #adeefc) brightness(120%);
+    transform: scale(100%);
+  }
+  2% {
+    filter: drop-shadow(0px 0px 10px #adeefc) brightness(200%) grayscale(0%);
+    transform: scale(150%);
+  }
+  100% {
+    filter: grayscale(100%) opacity(90%) brightness(50%);
+    transform: scale(90%);
+  }
 }
 
 /* ---------- Global anim triggers ---------- */
