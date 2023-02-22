@@ -14,6 +14,9 @@ function crystalHealth() {
       .querySelector("#crystal_sprite")
       .classList.remove("crystal_attacked");
   }
+  if (crystalHP < 25) {
+    document.querySelector("#healthText").classList.add("critical_health");
+  }
   if (crystalHP === 0) {
     console.log("YOU LOSE");
     gameOverScreen();
