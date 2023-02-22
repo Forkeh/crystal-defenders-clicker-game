@@ -4,7 +4,8 @@ function Orc1Spawn() {
   // console.log("SPAWN ORC");
 
   //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
-  setTimeout(() => {
+  orc1SpawnTimerId = setTimeout(() => {
+    orc1_container.classList.remove("pauseAnimation");
     orc1_container.classList.add("orc_run1");
     orc1_container.style.pointerEvents = "auto";
     orc1_container.style.visibility = "visible";
@@ -69,7 +70,7 @@ function Orc2Spawn() {
   // console.log("SPAWN ORC");
 
   //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
-  setTimeout(() => {
+  orc2SpawnTimerId = setTimeout(() => {
     orc2_container.classList.add("orc_run2");
     orc2_container.style.pointerEvents = "auto";
     orc2_container.style.visibility = "visible";

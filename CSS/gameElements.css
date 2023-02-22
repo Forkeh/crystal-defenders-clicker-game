@@ -17,8 +17,8 @@
 }
 
 #troll_container {
-  width: 50%;
   position: absolute;
+  width: 50%;
   top: 30%;
   left: -30%;
   visibility: hidden;
@@ -26,16 +26,16 @@
 
 #wizard_container {
   /* transform-origin: center; */
-  width: 50%;
   position: relative;
+  width: 50%;
   top: -125%;
   left: 69%;
   pointer-events: none;
 }
 
 #wizard_sprite {
-  z-index: 10;
   position: relative;
+  z-index: 11;
 }
 #wizard_shadow {
   /* transform-origin: center; */
@@ -44,7 +44,7 @@
   top: 75%;
   left: 41%;
   filter: blur(4px) opacity(80%);
-  z-index: 1;
+  z-index: 10;
 
 }
 
