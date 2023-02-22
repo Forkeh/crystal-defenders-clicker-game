@@ -3,9 +3,9 @@
 window.addEventListener("load", start);
 
 // ---------- GAME VARIABLES ---------- //
-let crystalHP = 10;
+let crystalHP = 100;
 let crystalHPSpeed = 300;
-let countdown = 10;
+let countdown = 60;
 let mana = 4;
 let kills = 0;
 let orcsAttacking = 0;
@@ -18,6 +18,8 @@ let crystalHPTimerId;
 // ---------- GAME ELEMENTS ---------- //
 const energyContainer = document.querySelector("#energy_container");
 const energySprite = document.querySelector("#energy_sprite");
+const crystalContainer = document.querySelector('#crystal_container');
+const crystalsprite = document.querySelector('#crystal_sprite');
 const wizardContainer = document.querySelector("#wizard_container");
 const orc1_container = document.querySelector("#orc1_container");
 const orc1_sprite = document.querySelector("#orc1_sprite");

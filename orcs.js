@@ -27,6 +27,7 @@ function orc1Click() {
 
     orc1_container.classList.add("pauseAnimation");
     orc1_sprite.classList.add("orc_death");
+    document.querySelector("#orc1_shadow").classList.add("orc_death_shadow");
     void orc1_sprite.offsetLeft;
     orc1_sprite.classList.remove("orc_attack");
 
@@ -36,6 +37,10 @@ function orc1Click() {
       orc1_container.style.visibility = "hidden";
       void orc1_container.offsetLeft;
       orc1_sprite.classList.remove("orc_death");
+      document
+        .querySelector("#orc1_shadow")
+        .classList.remove("orc_death_shadow");
+
       orc1_container.classList.remove("pauseAnimation");
       orc1_container.classList.remove("orc_run1");
       Orc1Spawn();
@@ -93,6 +98,7 @@ function orc2Click() {
 
     orc2_container.classList.add("pauseAnimation");
     orc2_sprite.classList.add("orc_death");
+    document.querySelector("#orc2_shadow").classList.add("orc_death_shadow");
     void orc2_sprite.offsetLeft;
     orc2_sprite.classList.remove("orc_attack");
 
@@ -102,6 +108,10 @@ function orc2Click() {
       orc2_container.style.visibility = "hidden";
       void orc2_container.offsetLeft;
       orc2_sprite.classList.remove("orc_death");
+          document
+            .querySelector("#orc2_shadow")
+            .classList.remove("orc_death_shadow");
+
       orc2_container.classList.remove("pauseAnimation");
       orc2_container.classList.remove("orc_run2");
       Orc2Spawn();

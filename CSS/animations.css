@@ -48,10 +48,10 @@
 
 @keyframes orc_path_01 {
   0% {
-    transform: translate(-100%);
+    transform: translate(-100%, 0%);
   }
   100% {
-    transform: translate(460%);
+    transform: translate(460%, 0%);
   }
 }
 
@@ -71,6 +71,7 @@
   }
   100% {
     transform: translate(460%, 20%);
+    z-index: 12;
   }
 }
 
@@ -118,6 +119,30 @@
   }
   100% {
     filter: grayscale(40%);
+    opacity: 0%;
+  }
+}
+
+.orc_death_shadow {
+  animation-name: orc_death_shadow;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+@keyframes orc_death_shadow {
+  0% {
+  }
+  10% {
+  }
+  
+  20% {
+
+  }
+  80% {
+    opacity: 100%;
+  }
+  100% {
     opacity: 0%;
   }
 }

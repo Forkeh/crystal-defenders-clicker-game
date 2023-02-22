@@ -8,12 +8,42 @@
   visibility: hidden;
 }
 
+#orc1_sprite {
+  position: relative;
+  z-index: 11;
+}
+
+#orc1_shadow {
+  width: 40%;
+  position:absolute;
+  top: 75%;
+  left: 27%;
+  filter: blur(4px) opacity(80%);
+  z-index: 10;
+
+}
+
 #orc2_container {
   width: 15%;
   position: absolute;
   filter: hue-rotate(45deg);
   pointer-events: auto;
   visibility: hidden;
+}
+
+#orc2_sprite {
+  position: relative;
+  z-index: 11;
+}
+
+#orc2_shadow {
+  width: 40%;
+  position:absolute;
+  top: 75%;
+  left: 27%;
+  filter: blur(4px) opacity(80%);
+  z-index: 10;
+
 }
 
 #troll_container {
@@ -25,7 +55,6 @@
 }
 
 #wizard_container {
-  /* transform-origin: center; */
   position: relative;
   width: 50%;
   top: -125%;
@@ -38,7 +67,6 @@
   z-index: 11;
 }
 #wizard_shadow {
-  /* transform-origin: center; */
   width: 17%;
   position:absolute;
   top: 75%;
@@ -54,7 +82,20 @@
   top: 45%;
   left: 75%;
   pointer-events: none;
+  z-index: 10;
 }
+
+#crystal_shadow {
+  width: 40%;
+  position:absolute;
+  top: 110%;
+  left: 27%;
+  filter: blur(4px) opacity(80%);
+  z-index: 10;
+
+}
+
+
 #energy_container {
   width: 5%;
   position: absolute;

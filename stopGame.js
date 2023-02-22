@@ -16,9 +16,11 @@ function stopGame() {
   orc1_sprite.classList.add("pauseAnimation");
   orc2_sprite.classList.add("pauseAnimation");
   energyContainer.style.visibility = "hidden";
+  crystalContainer.style.visibility = "hidden";
   wizardContainer.style.visibility = "hidden";
   orc1_container.style.visibility = "hidden";
   orc1_sprite.style.visibility = "hidden";
   orc2_container.style.visibility = "hidden";
   orc2_sprite.style.visibility = "hidden";
+  
 }
