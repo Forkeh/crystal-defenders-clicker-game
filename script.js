@@ -12,8 +12,10 @@ let orbClicked = false;
 
 const energyContainer = document.querySelector("#energy_container");
 const energySprite = document.querySelector("#energy_sprite");
-const orc1_container = document.querySelector("#orc_container");
-const orc1_sprite = document.querySelector("#orc_sprite");
+const orc1_container = document.querySelector("#orc1_container");
+const orc1_sprite = document.querySelector("#orc1_sprite");
+const orc2_container = document.querySelector("#orc2_container");
+const orc2_sprite = document.querySelector("#orc2_sprite");
 
 // ---------- GAME START ---------- //
 
@@ -25,7 +27,8 @@ function start() {
   document.querySelector("#game").addEventListener("mousedown", clickScreen);
 
   countDown();
-  spawnOrc();
+  Orc1Spawn();
+  Orc2Spawn();
   spawnOrb();
 }
 
@@ -87,13 +90,14 @@ function gameOverScreen() {
   ).innerHTML = `You killed ${kills} orcs!`;
 }
 
-// ---------- ORC FUNCTIONS ---------- //
+// ---------- ORC1 FUNCTIONS ---------- //
 
-function orcClick() {
-  console.log("CLICK ORC");
+function orc1Click() {
+  console.log("CLICK ORC1");
 
   if (mana > 0) {
-    orc1_sprite.removeEventListener("mousedown", orcClick);
+    orc1_sprite.removeEventListener("mousedown", orc1Click);
+    orc1_container.style.pointerEvents = 'none';
 
     orc1_container.classList.add("pauseAnimation");
     // orc1_sprite.classList.add("orc_death");
@@ -108,7 +112,7 @@ function orcClick() {
       orc1_sprite.classList.remove("orc_death");
       orc1_container.classList.remove("pauseAnimation");
       orc1_container.classList.remove("orc_run");
-      spawnOrc();
+      Orc1Spawn();
     }, 1500);
 
     //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
@@ -122,31 +126,99 @@ function orcClick() {
   }
 }
 
-function spawnOrc() {
+function Orc1Spawn() {
   // console.log("SPAWN ORC");
 
   //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   setTimeout(() => {
     orc1_container.classList.add("orc_run");
+    orc1_container.style.pointerEvents = "auto";
     orc1_container.style.visibility = "visible";
 
     orc1_sprite.setAttribute("src", "images/Orc/orc_run.png");
-    orc1_container.addEventListener("animationend", orcAttack);
+    orc1_container.addEventListener("animationend", orc1Attack);
   }, 1000);
 
-  orc1_sprite.addEventListener("mousedown", orcClick);
+  orc1_sprite.addEventListener("mousedown", orc1Click);
 }
 
-function orcAttack() {
+function orc1Attack() {
   if (orcsAttacking >= 0) {
     orcsAttacking++;
   }
   console.log("ORCS ATTACKING: " + orcsAttacking);
 
-  orc1_container.removeEventListener("animationend", orcAttack);
+  orc1_container.removeEventListener("animationend", orc1Attack);
 
   orc1_sprite.classList.add("orc_attack");
   orc1_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+}
+
+
+
+
+// ---------- ORC2 FUNCTIONS ---------- //
+
+function orc2Click() {
+  console.log("CLICK ORC2");
+
+  if (mana > 0) {
+    orc2_sprite.removeEventListener("mousedown", orc2Click);
+    orc2_container.style.pointerEvents = "none";
+
+    orc2_container.classList.add("pauseAnimation");
+    // orc2_sprite.classList.add("orc_death");
+    void orc2_sprite.offsetLeft;
+    orc2_sprite.classList.remove("orc_attack");
+
+    orc2_sprite.setAttribute("src", "images/Orc/orc_death.png");
+
+    setTimeout(() => {
+      orc2_container.style.visibility = "hidden";
+      void orc2_container.offsetLeft;
+      orc2_sprite.classList.remove("orc_death");
+      orc2_container.classList.remove("pauseAnimation");
+      orc2_container.classList.remove("orc_run1");
+      Orc2Spawn();
+    }, 1500);
+
+    //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
+
+    kills++;
+    console.log(`Kills: ${kills}`);
+
+    if (orcsAttacking > 0) {
+      orcsAttacking--;
+    }
+  }
+}
+
+function Orc2Spawn() {
+  // console.log("SPAWN ORC");
+
+  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
+  setTimeout(() => {
+    orc2_container.classList.add("orc_run1");
+    orc2_container.style.pointerEvents = "auto";
+    orc2_container.style.visibility = "visible";
+
+    orc2_sprite.setAttribute("src", "images/Orc/orc_run.png");
+    orc2_container.addEventListener("animationend", orc2Attack);
+  }, 1000);
+
+  orc2_sprite.addEventListener("mousedown", orc2Click);
+}
+
+function orc2Attack() {
+  if (orcsAttacking >= 0) {
+    orcsAttacking++;
+  }
+  console.log("ORCS ATTACKING: " + orcsAttacking);
+
+  orc2_container.removeEventListener("animationend", orc2Attack);
+
+  orc2_sprite.classList.add("orc_attack");
+  orc2_sprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
 
 // ---------- WIZARD ATTACK ---------- //
@@ -199,7 +271,7 @@ function spawnOrb() {
   setTimeout(() => {}, 100);
 }
 
-// ---------- CLICK SCREEN AND MANA ---------- //
+// ---------- CLICK SCREEN AND MANA ICONS ---------- //
 
 function clickScreen() {
   // console.log("CLICK SCREEN");

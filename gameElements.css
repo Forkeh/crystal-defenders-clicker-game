@@ -1,11 +1,22 @@
 /* ---------- Game element containers ---------- */
 
 
-#orc_container {
+#orc1_container {
   width: 15%;
   position: absolute;
   top: 50%;
   left: 0%;
+  pointer-events: auto;
+  visibility: hidden;
+}
+
+#orc2_container {
+  width: 15%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  filter: hue-rotate(45deg);
+  pointer-events: auto;
   visibility: hidden;
 }
 

@@ -30,6 +30,15 @@
   animation-timing-function: ease-out;
   animation-fill-mode: both;
 }
+
+.orc_run1 {
+  animation-name: orc_path_03;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
 @keyframes orc_path_01 {
   0% {
     transform: translate(-100%);
