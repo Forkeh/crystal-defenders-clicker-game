@@ -1,9 +1,9 @@
-@import url(gameElements.css);
-@import url(animations.css);
-@import url(GUI.css);
-@import url(screenStart.css);
-@import url(screenLose.css);
-@import url(screenWin.css);
+@import url(CSS/gameElements.css);
+@import url(CSS/animations.css);
+@import url(CSS/GUI.css);
+@import url(CSS/screenStart.css);
+@import url(CSS/screenLose.css);
+@import url(CSS/screenWin.css);
 
 
 body {
