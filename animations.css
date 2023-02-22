@@ -23,17 +23,17 @@
 
 /* ---------- Orc animations ---------- */
 
-.orc_run {
+.orc_run1 {
   animation-name: orc_path_01;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
 }
 
-.orc_run1 {
+.orc_run2 {
   animation-name: orc_path_03;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: both;

@@ -3,8 +3,8 @@
 window.addEventListener("load", start);
 
 // ---------- GAME VARIABLES ---------- //
-let crystalHP = 1000;
-let countdown = 600;
+let crystalHP = 100;
+let countdown = 60;
 let mana = 4;
 let kills = 0;
 let orcsAttacking = 0;
@@ -16,6 +16,7 @@ const orc1_container = document.querySelector("#orc1_container");
 const orc1_sprite = document.querySelector("#orc1_sprite");
 const orc2_container = document.querySelector("#orc2_container");
 const orc2_sprite = document.querySelector("#orc2_sprite");
+
 
 // ---------- GAME START ---------- //
 
@@ -104,14 +105,14 @@ function orc1Click() {
     void orc1_sprite.offsetLeft;
     orc1_sprite.classList.remove("orc_attack");
 
-    orc1_sprite.setAttribute("src", "images/Orc/orc_death.png");
+    orc1_sprite.setAttribute("src", "images/Orc/orc_death1.png");
 
     setTimeout(() => {
       orc1_container.style.visibility = "hidden";
       void orc1_container.offsetLeft;
       orc1_sprite.classList.remove("orc_death");
       orc1_container.classList.remove("pauseAnimation");
-      orc1_container.classList.remove("orc_run");
+      orc1_container.classList.remove("orc_run1");
       Orc1Spawn();
     }, 1500);
 
@@ -131,7 +132,7 @@ function Orc1Spawn() {
 
   //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   setTimeout(() => {
-    orc1_container.classList.add("orc_run");
+    orc1_container.classList.add("orc_run1");
     orc1_container.style.pointerEvents = "auto";
     orc1_container.style.visibility = "visible";
 
@@ -171,14 +172,14 @@ function orc2Click() {
     void orc2_sprite.offsetLeft;
     orc2_sprite.classList.remove("orc_attack");
 
-    orc2_sprite.setAttribute("src", "images/Orc/orc_death.png");
+    orc2_sprite.setAttribute("src", "images/Orc/orc_death2.png");
 
     setTimeout(() => {
       orc2_container.style.visibility = "hidden";
       void orc2_container.offsetLeft;
       orc2_sprite.classList.remove("orc_death");
       orc2_container.classList.remove("pauseAnimation");
-      orc2_container.classList.remove("orc_run1");
+      orc2_container.classList.remove("orc_run2");
       Orc2Spawn();
     }, 1500);
 
@@ -198,7 +199,7 @@ function Orc2Spawn() {
 
   //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   setTimeout(() => {
-    orc2_container.classList.add("orc_run1");
+    orc2_container.classList.add("orc_run2");
     orc2_container.style.pointerEvents = "auto";
     orc2_container.style.visibility = "visible";
 
