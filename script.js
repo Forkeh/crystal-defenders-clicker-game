@@ -138,7 +138,7 @@ function Orc1Spawn() {
 
     orc1_sprite.setAttribute("src", "images/Orc/orc_run.png");
     orc1_container.addEventListener("animationend", orc1Attack);
-  }, 1000);
+  }, randomSpawnDelay());
 
   orc1_sprite.addEventListener("mousedown", orc1Click);
 }
@@ -205,7 +205,7 @@ function Orc2Spawn() {
 
     orc2_sprite.setAttribute("src", "images/Orc/orc_run.png");
     orc2_container.addEventListener("animationend", orc2Attack);
-  }, 1000);
+  }, randomSpawnDelay());
 
   orc2_sprite.addEventListener("mousedown", orc2Click);
 }
@@ -305,3 +305,7 @@ function fullMana() {
 }
 
 
+function randomSpawnDelay() {
+  const delay = Math.floor(Math.random() * 3000) + 1000;
+  return delay;
+}
