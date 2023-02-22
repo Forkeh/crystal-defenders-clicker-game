@@ -5,7 +5,8 @@ function randomSpawnDelay() {
 }
 
 // ---------- ORC RANDOM SPAWN PATH ---------- //
-const orcPathList = ["orc_run1", "orc_run2"];
+const orcPathList = ["orc_run1", "orc_run2", "orc_run3"];
+// const orcPathList = ["orc_run3"];
 
 function randomOrcPath(element, classList) {
   const randomIndex = Math.floor(Math.random() * orcPathList.length);

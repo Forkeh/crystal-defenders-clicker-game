@@ -36,6 +36,17 @@
 }
 
 .orc_run2 {
+  animation-name: orc_path_02;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+}
+
+.orc_run3 {
   animation-name: orc_path_03;
   animation-duration: 2s;
   animation-iteration-count: 1;
@@ -52,6 +63,7 @@
   }
   100% {
     transform: translate(460%, 0%);
+    z-index: 10;
   }
 }
 
@@ -61,13 +73,14 @@
   }
   100% {
     transform: translate(460%, -20%);
+    z-index: 9;
   }
 }
 
 @keyframes orc_path_03 {
   0% {
     transform: translate(-100%, 70%);
-    z-index: 5;
+    z-index: 10;
   }
   100% {
     transform: translate(460%, 20%);
