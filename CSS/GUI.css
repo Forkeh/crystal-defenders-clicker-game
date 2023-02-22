@@ -63,3 +63,11 @@
   font-weight: 900;
   filter: drop-shadow(1px 1px 2px black);
 }
+
+.RestartGameButton {
+  font-family: 'Labrada', serif;
+font-size: 4vw;
+position: absolute;
+top: 116%;
+left: 30%
+}

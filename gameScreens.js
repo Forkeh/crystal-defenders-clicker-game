@@ -16,3 +16,4 @@ function gameOverScreen() {
   ).innerHTML = `You killed ${kills} orcs!`;
 }
 
+

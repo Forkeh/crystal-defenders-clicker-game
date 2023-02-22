@@ -3,9 +3,9 @@
 window.addEventListener("load", start);
 
 // ---------- GAME VARIABLES ---------- //
-let crystalHP = 100;
-let crystalHPSpeed = 300;
-let countdown = 60;
+let crystalHP = 100;          // How much HP the player has
+let crystalHPSpeed = 300;     // How fast the HP depletes while under attack
+let countdown = 60;           // How long the player has to survive to win
 let mana = 4;
 let kills = 0;
 let orcsAttacking = 0;
@@ -35,13 +35,8 @@ function start() {
   document.querySelector("#game").addEventListener("mousedown", clickScreen);
 
   countDown();
+  spawnOrb();
   Orc1Spawn();
   Orc2Spawn();
-  spawnOrb();
 }
 
-// ---------- ORC RANDOM SPAWN DELAY ---------- //
-function randomSpawnDelay() {
-  const delay = Math.floor(Math.random() * 3000) + 1000;
-  return delay;
-}
