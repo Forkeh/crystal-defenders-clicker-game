@@ -65,7 +65,7 @@ function restartGame() {
 
   countdown = initialCountdown;
   crystalHP = initialCrystalHP;
-  crystalHPSpeed = 300;
+  crystalHPSpeed = 200;
   mana = 4;
   kills = 0;
   orcsAttacking = 0;
