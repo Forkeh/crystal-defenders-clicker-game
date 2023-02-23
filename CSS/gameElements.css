@@ -68,6 +68,29 @@
   z-index: 10;
 
 }
+
+#orc4_container {
+  width: 15%;
+  position: absolute;
+  filter: hue-rotate(135deg);
+  pointer-events: auto;
+  visibility: hidden;
+}
+
+#orc4_sprite {
+  position: relative;
+  z-index: 11;
+}
+
+#orc4_shadow {
+  width: 40%;
+  position:absolute;
+  top: 75%;
+  left: 27%;
+  filter: blur(4px) opacity(70%);
+  z-index: 10;
+
+}
 #troll_container {
   position: absolute;
   width: 50%;

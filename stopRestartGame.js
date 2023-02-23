@@ -9,6 +9,7 @@ function stopGame() {
   clearTimeout(orc1SpawnTimerId);
   clearTimeout(orc2SpawnTimerId);
   clearTimeout(orc3SpawnTimerId);
+  clearTimeout(orc4SpawnTimerId);
   clearInterval(crystalHPTimerId);
   clearInterval(countdownIntervalId);
 
@@ -18,6 +19,8 @@ function stopGame() {
   orc2_sprite.removeEventListener("animationend", orc2Attack);
   orc3_container.removeEventListener("animationend", orc3Attack);
   orc3_sprite.removeEventListener("animationend", orc3Attack);
+  orc4_container.removeEventListener("animationend", orc4Attack);
+  orc4_sprite.removeEventListener("animationend", orc4Attack);
 
   crystalsprite.classList.remove("crystal_attacked");
 
@@ -35,6 +38,10 @@ function stopGame() {
   orc3_sprite.classList.add("pauseAnimation");
   orc3_container.className = "";
   orc3_sprite.className = "";
+  orc4_container.classList.add("pauseAnimation");
+  orc4_sprite.classList.add("pauseAnimation");
+  orc4_container.className = "";
+  orc4_sprite.className = "";
 
   elementsHide();
  

@@ -8,6 +8,8 @@ function elementsShow() {
     orc2_sprite.classList.remove("hidden");
     orc3_container.classList.remove("hidden");
     orc3_sprite.classList.remove("hidden");
+    orc4_container.classList.remove("hidden");
+    orc4_sprite.classList.remove("hidden");
 }
 
 function elementsHide() {
@@ -20,4 +22,6 @@ function elementsHide() {
   orc2_sprite.classList.add("hidden");
   orc3_container.classList.add("hidden");
   orc3_sprite.classList.add("hidden");
+  orc4_container.classList.add("hidden");
+  orc4_sprite.classList.add("hidden");
 }

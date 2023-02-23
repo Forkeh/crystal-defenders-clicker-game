@@ -15,6 +15,7 @@ let hasGameFinished = false;
 let orc1SpawnTimerId;
 let orc2SpawnTimerId;
 let orc3SpawnTimerId;
+let orc4SpawnTimerId;
 let crystalHPTimerId;
 let countdownIntervalId;
 
@@ -30,6 +31,8 @@ const orc2_container = document.querySelector("#orc2_container");
 const orc2_sprite = document.querySelector("#orc2_sprite");
 const orc3_container = document.querySelector("#orc3_container");
 const orc3_sprite = document.querySelector("#orc3_sprite");
+const orc4_container = document.querySelector("#orc4_container");
+const orc4_sprite = document.querySelector("#orc4_sprite");
 
 // ---------- GAME START ---------- //
 function programStart() {
@@ -49,6 +52,7 @@ function startGame() {
   Orc1Spawn();
   Orc2Spawn();
   Orc3Spawn();
+  Orc4Spawn();
   
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 
