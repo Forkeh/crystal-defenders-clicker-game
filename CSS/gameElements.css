@@ -89,8 +89,52 @@
   left: 27%;
   filter: blur(4px) opacity(70%);
   z-index: 10;
-
 }
+
+
+#orc5_container {
+  width: 15%;
+  position: absolute;
+  filter: hue-rotate(180deg);
+  pointer-events: auto;
+  visibility: hidden;
+}
+
+#orc5_sprite {
+  position: relative;
+  z-index: 11;
+}
+
+#orc5_shadow {
+  width: 40%;
+  position:absolute;
+  top: 75%;
+  left: 27%;
+  filter: blur(4px) opacity(70%);
+  z-index: 10;
+}
+
+#orc6_container {
+  width: 15%;
+  position: absolute;
+  filter: hue-rotate(225deg);
+  pointer-events: auto;
+}
+
+#orc6_sprite {
+  position: relative;
+  z-index: 11;
+}
+
+#orc6_shadow {
+  width: 40%;
+  position:absolute;
+  top: 75%;
+  left: 27%;
+  filter: blur(4px) opacity(70%);
+  /* z-index: 10; */
+}
+
 #troll_container {
   position: absolute;
   width: 50%;

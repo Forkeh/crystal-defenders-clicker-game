@@ -2,7 +2,7 @@
 
 function stopGame() {
   console.log("STOP GAME");
-
+  
   hasGameFinished = true;
   orcsAttacking = 0;
 
@@ -10,6 +10,8 @@ function stopGame() {
   clearTimeout(orc2SpawnTimerId);
   clearTimeout(orc3SpawnTimerId);
   clearTimeout(orc4SpawnTimerId);
+  clearTimeout(orc5SpawnTimerId);
+  clearTimeout(orc6SpawnTimerId);
   clearInterval(crystalHPTimerId);
   clearInterval(countdownIntervalId);
 
@@ -21,10 +23,14 @@ function stopGame() {
   orc3_sprite.removeEventListener("animationend", orc3Attack);
   orc4_container.removeEventListener("animationend", orc4Attack);
   orc4_sprite.removeEventListener("animationend", orc4Attack);
+  orc5_container.removeEventListener("animationend", orc5Attack);
+  orc5_sprite.removeEventListener("animationend", orc5Attack);
+  orc6_container.removeEventListener("animationend", orc6Attack);
+  orc6_sprite.removeEventListener("animationend", orc6Attack);
 
   crystalsprite.classList.remove("crystal_attacked");
 
-  document.querySelector('#healthText').classList.remove('critical_health');
+  document.querySelector("#healthText").classList.remove("critical_health");
 
   orc1_container.classList.add("pauseAnimation");
   orc1_sprite.classList.add("pauseAnimation");
@@ -42,9 +48,16 @@ function stopGame() {
   orc4_sprite.classList.add("pauseAnimation");
   orc4_container.className = "";
   orc4_sprite.className = "";
+  orc5_container.classList.add("pauseAnimation");
+  orc5_sprite.classList.add("pauseAnimation");
+  orc5_container.className = "";
+  orc5_sprite.className = "";
+  orc6_container.classList.add("pauseAnimation");
+  orc6_sprite.classList.add("pauseAnimation");
+  orc6_container.className = "";
+  orc6_sprite.className = "";
 
   elementsHide();
- 
 }
 
 // ---------- RESTART GAME ---------- //
@@ -56,9 +69,9 @@ function restartGame() {
 
   elementsShow();
 
-  crystalHP = 100;
+  countdown = initialCountdown;
+  crystalHP = initialCrystalHP;
   crystalHPSpeed = 300;
-  countdown = 60;
   mana = 4;
   kills = 0;
   orcsAttacking = 0;

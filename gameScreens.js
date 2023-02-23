@@ -11,7 +11,7 @@ function winScreen() {
   document.querySelector("#win").style.visibility = "visible";
   document.querySelector(
     "#orcs-killed-win"
-  ).innerHTML = `You killed ${kills} orcs!`;
+  ).innerHTML = `You vanquished ${kills} orcs!`;
 }
 
 function gameOverScreen() {

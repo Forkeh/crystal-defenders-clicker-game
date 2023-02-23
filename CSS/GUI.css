@@ -66,8 +66,12 @@
 
 .screenButton {
   font-family: 'Labrada', serif;
+  width: 50%;
 font-size: 4vw;
 position: absolute;
-top: 116%;
-left: 30%
+top: 123%;
+left: 24%;
+border-radius: 50px;
+background-color: rgb(132, 75, 0);
+color: bisque;
 }

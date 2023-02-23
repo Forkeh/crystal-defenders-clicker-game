@@ -8,18 +8,17 @@ function randomSpawnDelay() {
 const orcPathList = ["orc_run1", "orc_run2", "orc_run3"];
 // const orcPathList = ["orc_run3"];
 
-function randomOrcPath(element, classList) {
+function randomOrcPath(orcContainer, classList) {
   const randomIndex = Math.floor(Math.random() * orcPathList.length);
   const randomPath = classList[randomIndex];
-  element.classList.add(randomPath);
+  orcContainer.classList.add(randomPath);
 }
 
 // ---------- ORC1 FUNCTIONS ---------- //
 
 function Orc1Spawn() {
-  // console.log("SPAWN ORC");
+  // console.log("SPAWN ORC1");
 
-  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   orc1SpawnTimerId = setTimeout(() => {
     orc1_container.classList.remove("pauseAnimation");
     randomOrcPath(orc1_container, orcPathList);
@@ -60,10 +59,10 @@ function orc1Click() {
 
       orc1_container.className = "";
 
-      Orc1Spawn();
+      if (!hasGameFinished) {
+        Orc1Spawn();
+      }
     }, 1500);
-
-    //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
 
     kills++;
     console.log(`Kills: ${kills}`);
@@ -89,9 +88,8 @@ function orc1Attack() {
 // ---------- ORC2 FUNCTIONS ---------- //
 
 function Orc2Spawn() {
-  // console.log("SPAWN ORC");
+  // console.log("SPAWN ORC2");
 
-  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   orc2SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc2_container, orcPathList);
     orc2_container.style.pointerEvents = "auto";
@@ -109,31 +107,31 @@ function orc2Click() {
   console.log("CLICK ORC2");
 
   if (mana > 0) {
-   orc2_sprite.removeEventListener("mousedown", orc2Click);
-   orc2_container.removeEventListener("animationend", orc2Attack);
+    orc2_sprite.removeEventListener("mousedown", orc2Click);
+    orc2_container.removeEventListener("animationend", orc2Attack);
 
-   orc2_container.style.pointerEvents = "none";
+    orc2_container.style.pointerEvents = "none";
 
-   orc2_container.classList.add("pauseAnimation");
-   orc2_sprite.classList.add("orc_death");
-   document.querySelector("#orc2_shadow").classList.add("orc_death_shadow");
-   orc2_sprite.classList.remove("orc_attack");
+    orc2_container.classList.add("pauseAnimation");
+    orc2_sprite.classList.add("orc_death");
+    document.querySelector("#orc2_shadow").classList.add("orc_death_shadow");
+    orc2_sprite.classList.remove("orc_attack");
 
-   orc2_sprite.setAttribute("src", "images/Orc/orc_death2.png");
+    orc2_sprite.setAttribute("src", "images/Orc/orc_death2.png");
 
-   setTimeout(() => {
-     orc2_container.style.visibility = "hidden";
-     orc2_sprite.classList.remove("orc_death");
-     document
-       .querySelector("#orc2_shadow")
-       .classList.remove("orc_death_shadow");
+    setTimeout(() => {
+      orc2_container.style.visibility = "hidden";
+      orc2_sprite.classList.remove("orc_death");
+      document
+        .querySelector("#orc2_shadow")
+        .classList.remove("orc_death_shadow");
 
-     orc2_container.className = "";
+      orc2_container.className = "";
 
-     Orc2Spawn();
-   }, 1500);
-
-    //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
+      if (!hasGameFinished) {
+        Orc2Spawn();
+      }
+    }, 1500);
 
     kills++;
     console.log(`Kills: ${kills}`);
@@ -156,15 +154,11 @@ function orc2Attack() {
   orc2_sprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
 
-
-
-
 // ---------- ORC3 FUNCTIONS ---------- //
 
 function Orc3Spawn() {
-  // console.log("SPAWN ORC");
+  // console.log("SPAWN ORC3");
 
-  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   orc3SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc3_container, orcPathList);
     orc3_container.style.pointerEvents = "auto";
@@ -203,10 +197,10 @@ function orc3Click() {
 
       orc3_container.className = "";
 
-      Orc3Spawn();
+      if (!hasGameFinished) {
+        Orc3Spawn();
+      }
     }, 1500);
-
-    //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
 
     kills++;
     console.log(`Kills: ${kills}`);
@@ -229,13 +223,11 @@ function orc3Attack() {
   orc3_sprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
 
-
 // ---------- ORC4 FUNCTIONS ---------- //
 
 function Orc4Spawn() {
-  // console.log("SPAWN ORC");
+  // console.log("SPAWN ORC4");
 
-  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
   orc4SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc4_container, orcPathList);
     orc4_container.style.pointerEvents = "auto";
@@ -274,10 +266,10 @@ function orc4Click() {
 
       orc4_container.className = "";
 
-      Orc4Spawn();
+      if (!hasGameFinished) {
+        Orc5Spawn();
+      }
     }, 1500);
-
-    //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
 
     kills++;
     console.log(`Kills: ${kills}`);
@@ -298,4 +290,142 @@ function orc4Attack() {
 
   orc4_sprite.classList.add("orc_attack");
   orc4_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+}
+
+// ---------- ORC5 FUNCTIONS ---------- //
+
+function Orc5Spawn() {
+  // console.log("SPAWN ORC5");
+
+  orc5SpawnTimerId = setTimeout(() => {
+    randomOrcPath(orc5_container, orcPathList);
+    orc5_container.style.pointerEvents = "auto";
+    orc5_container.style.visibility = "visible";
+
+    orc5_sprite.setAttribute("src", "images/Orc/orc_run.png");
+
+    orc5_container.addEventListener("animationend", orc5Attack);
+  }, randomSpawnDelay());
+
+  orc5_sprite.addEventListener("mousedown", orc5Click);
+}
+
+function orc5Click() {
+  console.log("CLICK ORC5");
+
+  if (mana > 0) {
+    orc5_sprite.removeEventListener("mousedown", orc5Click);
+    orc5_container.removeEventListener("animationend", orc5Attack);
+
+    orc5_container.style.pointerEvents = "none";
+
+    orc5_container.classList.add("pauseAnimation");
+    orc5_sprite.classList.add("orc_death");
+    document.querySelector("#orc5_shadow").classList.add("orc_death_shadow");
+    orc5_sprite.classList.remove("orc_attack");
+
+    orc5_sprite.setAttribute("src", "images/Orc/orc_death5.png");
+
+    setTimeout(() => {
+      orc5_container.style.visibility = "hidden";
+      orc5_sprite.classList.remove("orc_death");
+      document
+        .querySelector("#orc5_shadow")
+        .classList.remove("orc_death_shadow");
+
+      orc5_container.className = "";
+
+      if (!hasGameFinished) {
+        Orc5Spawn();
+      }
+    }, 1500);
+
+    kills++;
+    console.log(`Kills: ${kills}`);
+
+    if (orcsAttacking > 0) {
+      orcsAttacking--;
+    }
+  }
+}
+
+function orc5Attack() {
+  if (orcsAttacking >= 0) {
+    orcsAttacking++;
+  }
+  console.log("ORCS ATTACKING: " + orcsAttacking);
+
+  orc5_container.removeEventListener("animationend", orc5Attack);
+
+  orc5_sprite.classList.add("orc_attack");
+  orc5_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+}
+
+// ---------- ORC6 FUNCTIONS ---------- //
+
+function Orc6Spawn() {
+  // console.log("SPAWN ORC6");
+
+  orc6SpawnTimerId = setTimeout(() => {
+    randomOrcPath(orc6_container, orcPathList);
+    orc6_container.style.pointerEvents = "auto";
+    orc6_container.classList.remove("hidden");
+
+    orc6_sprite.setAttribute("src", "images/Orc/orc_run.png");
+
+    orc6_container.addEventListener("animationend", orc6Attack);
+  }, randomSpawnDelay());
+
+  orc6_sprite.addEventListener("mousedown", orc6Click);
+}
+
+function orc6Click() {
+  console.log("CLICK ORC6");
+
+  if (mana > 0) {
+    orc6_sprite.removeEventListener("mousedown", orc6Click);
+    orc6_container.removeEventListener("animationend", orc6Attack);
+
+    orc6_container.style.pointerEvents = "none";
+
+    orc6_container.classList.add("pauseAnimation");
+    orc6_sprite.classList.add("orc_death");
+    document.querySelector("#orc6_shadow").classList.add("orc_death_shadow");
+    orc6_sprite.classList.remove("orc_attack");
+
+    orc6_sprite.setAttribute("src", "images/Orc/orc_death6.png");
+
+    setTimeout(() => {
+      orc6_container.classList.add("hidden");
+      orc6_sprite.classList.remove("orc_death");
+      document
+        .querySelector("#orc6_shadow")
+        .classList.remove("orc_death_shadow");
+
+      orc6_container.className = "";
+
+      if (!hasGameFinished) {
+        Orc6Spawn();
+      }
+    }, 1500);
+
+    kills++;
+    console.log(`Kills: ${kills}`);
+
+    if (orcsAttacking > 0) {
+      orcsAttacking--;
+    }
+  }
+}
+
+function orc6Attack() {
+  if (orcsAttacking >= 0) {
+    orcsAttacking++;
+  }
+  console.log("ORCS ATTACKING: " + orcsAttacking);
+
+  orc6_container.removeEventListener("animationend", orc6Attack);
+
+  orc6_sprite.classList.add("orc_attack");
+  orc6_sprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
