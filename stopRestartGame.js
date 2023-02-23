@@ -32,28 +32,22 @@ function stopGame() {
 
   document.querySelector("#healthText").classList.remove("critical_health");
 
-  orc1_container.classList.add("pauseAnimation");
-  orc1_sprite.classList.add("pauseAnimation");
+  
   orc1_container.className = "";
   orc1_sprite.className = "";
-  orc2_container.classList.add("pauseAnimation");
-  orc2_sprite.classList.add("pauseAnimation");
+  
   orc2_container.className = "";
   orc2_sprite.className = "";
-  orc3_container.classList.add("pauseAnimation");
-  orc3_sprite.classList.add("pauseAnimation");
+  
   orc3_container.className = "";
   orc3_sprite.className = "";
-  orc4_container.classList.add("pauseAnimation");
-  orc4_sprite.classList.add("pauseAnimation");
+ 
   orc4_container.className = "";
   orc4_sprite.className = "";
-  orc5_container.classList.add("pauseAnimation");
-  orc5_sprite.classList.add("pauseAnimation");
+  
   orc5_container.className = "";
   orc5_sprite.className = "";
-  orc6_container.classList.add("pauseAnimation");
-  orc6_sprite.classList.add("pauseAnimation");
+  
   orc6_container.className = "";
   orc6_sprite.className = "";
 

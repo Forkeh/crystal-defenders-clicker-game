@@ -3,11 +3,11 @@
 window.addEventListener("load", programStart);
 
 // ---------- GAME VARIABLES ---------- //
-let initialCountdown = 6; // How long the player has to survive to win
+let initialCountdown = 60; // How long the player has to survive to win
 let countdown = initialCountdown; 
 let initialCrystalHP = 100; // How much HP the player has
 let crystalHP = initialCrystalHP; 
-let crystalHPSpeed = 300; // How fast the HP depletes while under attack
+let crystalHPSpeed = 200; // How fast the HP depletes while under attack, lower is faster
 let mana = 4;
 let kills = 0;
 let orcsAttacking = 0;
