@@ -18,6 +18,8 @@
       <div id="game_background"></div>
 
       <div id="game_elements">
+
+        <!---------- Orc elements ---------->
         <div id="orc1_container">
           <img id="orc1_shadow" src="images/shadow.png" alt="">
           <img class="spriteWidth" id="orc1_sprite" draggable="false" alt="orc_run" />
@@ -26,22 +28,35 @@
           <img id="orc2_shadow" src="images/shadow.png" alt="">
           <img class="spriteWidth" id="orc2_sprite" draggable="false" alt="orc_run" />
         </div>
+        <div id="orc3_container">
+          <img id="orc3_shadow" src="images/shadow.png" alt="">
+          <img class="spriteWidth" id="orc3_sprite" draggable="false" alt="orc_run" />
+        </div>
+        <div id="orc4_container">
+          <img id="orc4_shadow" src="images/shadow.png" alt="">
+          <img class="spriteWidth" id="orc4_sprite" draggable="false" alt="orc_run" />
+        </div>
+
+        <!---------- Troll elements ---------->
         <div id="troll_container" class="troll">
           <img class="spriteWidth" id="troll_sprite" src="images\Troll\troll_run.png" alt="troll_run" />
         </div>
+        <!---------- Wizard elements ---------->
         <div id="wizard_container" class="wizard_idle">
           <img id="wizard_shadow" src="images/shadow.png" alt="">
           <img class="spriteWidth" id="wizard_sprite" src="images\Wizard\wizard_idle.png" alt="wizard_idle" />
         </div>
+        <!---------- Crystal elements ---------->
         <div id="crystal_container" class="crystal_idle">
           <img id="crystal_shadow" src="images/shadow.png" alt="">
           <img class="spriteWidth" id="crystal_sprite" src="images\crystal.png" alt="crystal" />
         </div>
+        <!---------- Energy elements ---------->
         <div id="energy_container">
           <img class="spriteWidth" draggable="false" id="energy_sprite" src="images\energy_orb.png" alt="energy_orb" />
         </div>
       </div>
-
+<!---------- UI elements ---------->
       <div id="game_ui">
         <div id="health_board">
           <div id="healthText"></div>
@@ -65,7 +80,7 @@
         </div>
       </div>
     </div>
-
+<!---------- Screens elements ---------->
     <div id="start">
       <div id="start_window">
         <div id="start_text">
@@ -99,6 +114,7 @@
     </div>
   </div>
 
+  <!---------- Javascript import ---------->
   <script src="script.js"></script>
   <script src="countdown.js"></script>
   <script src="crystal.js"></script>

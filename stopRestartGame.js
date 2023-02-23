@@ -8,6 +8,7 @@ function stopGame() {
 
   clearTimeout(orc1SpawnTimerId);
   clearTimeout(orc2SpawnTimerId);
+  clearTimeout(orc3SpawnTimerId);
   clearInterval(crystalHPTimerId);
   clearInterval(countdownIntervalId);
 
@@ -15,21 +16,26 @@ function stopGame() {
   orc1_sprite.removeEventListener("animationend", orc1Attack);
   orc2_container.removeEventListener("animationend", orc2Attack);
   orc2_sprite.removeEventListener("animationend", orc2Attack);
+  orc3_container.removeEventListener("animationend", orc2Attack);
+  orc3_sprite.removeEventListener("animationend", orc2Attack);
 
-  document
-    .querySelector("#crystal_sprite")
-    .classList.remove("crystal_attacked");
+  crystalsprite.classList.remove("crystal_attacked");
+  document.querySelector('#healthText').classList.remove('critical_health');
 
   // document.querySelector("#healthText").classList.remove("critical_health");
 
   orc1_container.classList.add("pauseAnimation");
-  orc2_container.classList.add("pauseAnimation");
   orc1_sprite.classList.add("pauseAnimation");
-  orc2_sprite.classList.add("pauseAnimation");
   orc1_container.className = "";
   orc1_sprite.className = "";
+  orc2_container.classList.add("pauseAnimation");
+  orc2_sprite.classList.add("pauseAnimation");
   orc2_container.className = "";
   orc2_sprite.className = "";
+  orc3_container.classList.add("pauseAnimation");
+  orc3_sprite.classList.add("pauseAnimation");
+  orc3_container.className = "";
+  orc3_sprite.className = "";
 
   energyContainer.style.visibility = "hidden";
   crystalContainer.style.visibility = "hidden";
@@ -38,6 +44,8 @@ function stopGame() {
   orc1_sprite.style.visibility = "hidden";
   orc2_container.style.visibility = "hidden";
   orc2_sprite.style.visibility = "hidden";
+  orc3_container.style.visibility = "hidden";
+  orc3_sprite.style.visibility = "hidden";
 }
 
 // ---------- RESTART GAME ---------- //
@@ -54,6 +62,8 @@ function restartGame() {
   orc1_sprite.style.visibility = "visible";
   orc2_container.style.visibility = "visible";
   orc2_sprite.style.visibility = "visible";
+  orc3_container.style.visibility = "visible";
+  orc3_sprite.style.visibility = "visible";
 
   crystalHP = 100;
   crystalHPSpeed = 300;
@@ -63,6 +73,7 @@ function restartGame() {
   orcsAttacking = 0;
   orbClicked = false;
   hasGameFinished = false;
+  fullMana();
   // resetOrb();
   start();
 }

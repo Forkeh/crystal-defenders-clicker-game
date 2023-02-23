@@ -4,8 +4,8 @@ window.addEventListener("load", start);
 
 // ---------- GAME VARIABLES ---------- //
 let crystalHP = 100; // How much HP the player has
-let crystalHPSpeed = 300; // How fast the HP depletes while under attack
-let countdown = 6; // How long the player has to survive to win
+let crystalHPSpeed = 100; // How fast the HP depletes while under attack
+let countdown = 60; // How long the player has to survive to win
 let mana = 4;
 let kills = 0;
 let orcsAttacking = 0;
@@ -14,6 +14,7 @@ let hasGameFinished = false;
 
 let orc1SpawnTimerId;
 let orc2SpawnTimerId;
+let orc3SpawnTimerId;
 let crystalHPTimerId;
 let countdownIntervalId;
 
@@ -27,6 +28,8 @@ const orc1_container = document.querySelector("#orc1_container");
 const orc1_sprite = document.querySelector("#orc1_sprite");
 const orc2_container = document.querySelector("#orc2_container");
 const orc2_sprite = document.querySelector("#orc2_sprite");
+const orc3_container = document.querySelector("#orc3_container");
+const orc3_sprite = document.querySelector("#orc3_sprite");
 
 // ---------- GAME START ---------- //
 function start() {
@@ -40,4 +43,5 @@ function start() {
   spawnOrb();
   Orc1Spawn();
   Orc2Spawn();
+  Orc3Spawn();
 }

@@ -155,3 +155,76 @@ function orc2Attack() {
   orc2_sprite.classList.add("orc_attack");
   orc2_sprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
+
+
+
+
+// ---------- ORC3 FUNCTIONS ---------- //
+
+function Orc3Spawn() {
+  // console.log("SPAWN ORC");
+
+  //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
+  orc3SpawnTimerId = setTimeout(() => {
+    randomOrcPath(orc3_container, orcPathList);
+    orc3_container.style.pointerEvents = "auto";
+    orc3_container.style.visibility = "visible";
+
+    orc3_sprite.setAttribute("src", "images/Orc/orc_run.png");
+
+    orc3_container.addEventListener("animationend", orc3Attack);
+  }, randomSpawnDelay());
+
+  orc3_sprite.addEventListener("mousedown", orc3Click);
+}
+
+function orc3Click() {
+  console.log("CLICK ORC3");
+
+  if (mana > 0) {
+    orc3_sprite.removeEventListener("mousedown", orc3Click);
+    orc3_container.removeEventListener("animationend", orc3Attack);
+
+    orc3_container.style.pointerEvents = "none";
+
+    orc3_container.classList.add("pauseAnimation");
+    orc3_sprite.classList.add("orc_death");
+    document.querySelector("#orc3_shadow").classList.add("orc_death_shadow");
+    orc3_sprite.classList.remove("orc_attack");
+
+    orc3_sprite.setAttribute("src", "images/Orc/orc_death3.png");
+
+    setTimeout(() => {
+      orc3_container.style.visibility = "hidden";
+      orc3_sprite.classList.remove("orc_death");
+      document
+        .querySelector("#orc3_shadow")
+        .classList.remove("orc_death_shadow");
+
+      orc3_container.className = "";
+
+      Orc3Spawn();
+    }, 1500);
+
+    //Hvorfor skal der være setTimeout på for at tilføje orc_run?!
+
+    kills++;
+    console.log(`Kills: ${kills}`);
+
+    if (orcsAttacking > 0) {
+      orcsAttacking--;
+    }
+  }
+}
+
+function orc3Attack() {
+  if (orcsAttacking >= 0) {
+    orcsAttacking++;
+  }
+  console.log("ORCS ATTACKING: " + orcsAttacking);
+
+  orc3_container.removeEventListener("animationend", orc3Attack);
+
+  orc3_sprite.classList.add("orc_attack");
+  orc3_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+}

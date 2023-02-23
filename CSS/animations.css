@@ -113,6 +113,7 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-fill-mode: both;
+  z-index: 1;
 }
 @keyframes orc_death {
   0% {
