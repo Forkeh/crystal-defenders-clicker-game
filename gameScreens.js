@@ -1,5 +1,11 @@
 // ---------- SHOW GAME SCREENS ---------- //
 
+function startGameButton() {
+  console.log('START GAME BUTTON');
+  document.querySelector('#start').classList.add('hidden');
+  startGame();
+}
+
 function winScreen() {
   stopGame();
   document.querySelector("#win").style.visibility = "visible";

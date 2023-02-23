@@ -1,10 +1,10 @@
 "use strict";
 
-window.addEventListener("load", start);
+window.addEventListener("load", programStart);
 
 // ---------- GAME VARIABLES ---------- //
 let crystalHP = 100; // How much HP the player has
-let crystalHPSpeed = 100; // How fast the HP depletes while under attack
+let crystalHPSpeed = 300; // How fast the HP depletes while under attack
 let countdown = 60; // How long the player has to survive to win
 let mana = 4;
 let kills = 0;
@@ -32,16 +32,25 @@ const orc3_container = document.querySelector("#orc3_container");
 const orc3_sprite = document.querySelector("#orc3_sprite");
 
 // ---------- GAME START ---------- //
-function start() {
-  console.log("START");
+function programStart() {
+  // console.log("PROGRAM START");
 
-  crystalHealth(crystalHPSpeed); // How fast crystal loses hp
+elementsHide();
+  
+  
+}
 
-  document.querySelector("#game").addEventListener("mousedown", clickScreen);
+function startGame() {
 
+
+  elementsShow();
   countDown();
   spawnOrb();
   Orc1Spawn();
   Orc2Spawn();
   Orc3Spawn();
+  
+  crystalHealth(crystalHPSpeed); // How fast crystal loses hp
+
+  document.querySelector("#game").addEventListener("mousedown", clickScreen);
 }

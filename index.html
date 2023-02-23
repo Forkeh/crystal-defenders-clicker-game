@@ -56,7 +56,7 @@
           <img class="spriteWidth" draggable="false" id="energy_sprite" src="images\energy_orb.png" alt="energy_orb" />
         </div>
       </div>
-<!---------- UI elements ---------->
+      <!---------- UI elements ---------->
       <div id="game_ui">
         <div id="health_board">
           <div id="healthText"></div>
@@ -80,13 +80,13 @@
         </div>
       </div>
     </div>
-<!---------- Screens elements ---------->
+    <!---------- Screens elements ---------->
     <div id="start">
       <div id="start_window">
         <div id="start_text">
           <h1>Crystal Defender</h1>
           Press the button to the start the game!
-          <button id="startGameButton">Start Game</button>
+          <button onclick="startGameButton()" class="screenButton" id="startGameButton">Start Game</button>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@
           <h1>You've perished!</h1>
           You failed to protect the kingdom!
           <div id="orcs-killed-lose">KILLS</div>
-          <button onclick="restartGame()" class="RestartGameButton">Restart Game</button>
+          <button onclick="restartGame()" class="screenButton">Restart Game</button>
         </div>
       </div>
     </div>
@@ -108,7 +108,7 @@
           <h1>You win!</h1>
           You defended the kingdom!
           <div id="orcs-killed-win">KILLS</div>
-          <button onclick="restartGame()" class="RestartGameButton">Restart Game</button>
+          <button onclick="restartGame()" class="screenButton">Restart Game</button>
         </div>
       </div>
     </div>
@@ -125,6 +125,7 @@
   <script src="manaIcons.js"></script>
   <script src="clickScreen.js"></script>
   <script src="stopRestartGame.js"></script>
+  <script src="elementVisibilty.js"></script>
 </body>
 
 </html>
