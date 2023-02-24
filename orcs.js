@@ -226,7 +226,7 @@ function orc3Attack() {
 // ---------- ORC4 FUNCTIONS ---------- //
 
 function Orc4Spawn() {
-  // console.log("SPAWN ORC4");
+  console.log("SPAWN ORC4");
 
   orc4SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc4_container, orcPathList);
@@ -267,7 +267,7 @@ function orc4Click() {
       orc4_container.className = "";
 
       if (!hasGameFinished) {
-        Orc5Spawn();
+        Orc4Spawn();
       }
     }, 1500);
 
@@ -295,7 +295,7 @@ function orc4Attack() {
 // ---------- ORC5 FUNCTIONS ---------- //
 
 function Orc5Spawn() {
-  // console.log("SPAWN ORC5");
+  console.log("SPAWN ORC5");
 
   orc5SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc5_container, orcPathList);
@@ -327,7 +327,7 @@ function orc5Click() {
     orc5_sprite.setAttribute("src", "images/Orc/orc_death5.png");
 
     setTimeout(() => {
-      orc5_container.style.visibility = "hidden";
+      orc5_container.classList.add('hidden');
       orc5_sprite.classList.remove("orc_death");
       document
         .querySelector("#orc5_shadow")
@@ -380,7 +380,7 @@ function Orc6Spawn() {
 }
 
 function orc6Click() {
-  console.log("CLICK ORC6");
+  // console.log("CLICK ORC6");
 
   if (mana > 0) {
     orc6_sprite.removeEventListener("mousedown", orc6Click);

@@ -53,12 +53,12 @@ function startGame() {
   elementsShow();
   countDown();
   spawnOrb();
-  Orc1Spawn();
-  Orc2Spawn();
-  Orc3Spawn();
+  // Orc1Spawn();
+  // Orc2Spawn();
+  // Orc3Spawn();
   Orc4Spawn();
   Orc5Spawn();
-  Orc6Spawn();
+  // Orc6Spawn();
 
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 
