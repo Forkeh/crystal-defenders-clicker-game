@@ -24,6 +24,10 @@ let crystalHPTimerId;
 let countdownIntervalId;
 
 // ---------- GAME ELEMENTS ---------- //
+// const lightningImg = new Image();
+// lightningImg.src = "./images/Lightning/lightningStrike.png";
+
+const ligntningContainer = document.querySelector("#ligntningStrike_container");
 const energyContainer = document.querySelector("#energy_container");
 const energySprite = document.querySelector("#energy_sprite");
 const crystalContainer = document.querySelector("#crystal_container");
@@ -53,12 +57,12 @@ function startGame() {
   elementsShow();
   countDown();
   spawnOrb();
-  // Orc1Spawn();
-  // Orc2Spawn();
-  // Orc3Spawn();
+  Orc1Spawn();
+  Orc2Spawn();
+  Orc3Spawn();
   Orc4Spawn();
   Orc5Spawn();
-  // Orc6Spawn();
+  Orc6Spawn();
 
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 

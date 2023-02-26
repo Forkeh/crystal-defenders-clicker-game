@@ -75,3 +75,13 @@ border-radius: 50px;
 background-color: rgb(132, 75, 0);
 color: bisque;
 }
+
+#borderFlash {
+  position: absolute;
+  width: 110%;
+  top: -10%;
+  left: -5%;
+  z-index: 101;
+  filter: blur(60px);
+  visibility: hidden;
+}

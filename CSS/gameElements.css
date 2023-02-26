@@ -1,6 +1,5 @@
 /* ---------- Game element containers ---------- */
 
-
 #orc1_container {
   width: 15%;
   position: absolute;
@@ -15,12 +14,11 @@
 
 #orc1_shadow {
   width: 40%;
-  position:absolute;
+  position: absolute;
   top: 75%;
   left: 27%;
   filter: blur(4px) opacity(70%);
   z-index: 10;
-
 }
 
 #orc2_container {
@@ -38,12 +36,11 @@
 
 #orc2_shadow {
   width: 40%;
-  position:absolute;
+  position: absolute;
   top: 75%;
   left: 27%;
   filter: blur(4px) opacity(70%);
   z-index: 10;
-
 }
 
 #orc3_container {
@@ -61,12 +58,11 @@
 
 #orc3_shadow {
   width: 40%;
-  position:absolute;
+  position: absolute;
   top: 75%;
   left: 27%;
   filter: blur(4px) opacity(70%);
   z-index: 10;
-
 }
 
 #orc4_container {
@@ -84,13 +80,12 @@
 
 #orc4_shadow {
   width: 40%;
-  position:absolute;
+  position: absolute;
   top: 75%;
   left: 27%;
   filter: blur(4px) opacity(70%);
   z-index: 10;
 }
-
 
 #orc5_container {
   width: 15%;
@@ -107,7 +102,7 @@
 
 #orc5_shadow {
   width: 40%;
-  position:absolute;
+  position: absolute;
   top: 75%;
   left: 27%;
   filter: blur(4px) opacity(70%);
@@ -128,7 +123,7 @@
 
 #orc6_shadow {
   width: 40%;
-  position:absolute;
+  position: absolute;
   top: 75%;
   left: 27%;
   filter: blur(4px) opacity(70%);
@@ -157,12 +152,11 @@
 }
 #wizard_shadow {
   width: 17%;
-  position:absolute;
+  position: absolute;
   top: 75%;
   left: 41%;
   filter: blur(4px) opacity(70%);
   z-index: 10;
-
 }
 
 #crystal_container {
@@ -176,18 +170,28 @@
 
 #crystal_shadow {
   width: 40%;
-  position:absolute;
+  position: absolute;
   top: 110%;
   left: 27%;
   filter: blur(4px) opacity(50%);
   z-index: 10;
-
 }
-
 
 #energy_container {
   width: 5%;
   position: absolute;
   top: 25%;
   left: 10%;
+}
+
+#ligntningStrike_container {
+  width: 13%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  filter:drop-shadow(0px 0px 5px rgb(185, 236, 255));
+  /* pointer-events: none; */
+  /* z-index: 105; */
+  visibility: hidden;
+
 }
