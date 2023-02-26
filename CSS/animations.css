@@ -228,7 +228,7 @@
 
 .energy_move {
   animation-name: energy_path_01;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
