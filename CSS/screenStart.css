@@ -12,7 +12,7 @@
   grid-area: 1/1;
   width: 100%;
   height: 100%;
-  background-image: url(images/GUI/window.png);
+  background-image: url(/images/GUI/window.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
