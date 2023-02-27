@@ -1,19 +1,3 @@
-// ---------- ORC RANDOM SPAWN DELAY ---------- //
-function randomSpawnDelay() {
-  const delay = Math.floor(Math.random() * 3000) + 1000;
-  return delay;
-}
-
-// ---------- ORC RANDOM SPAWN PATH ---------- //
-const orcPathList = ["orc_run1", "orc_run2", "orc_run3"];
-// const orcPathList = ["orc_run3"];
-
-function randomOrcPath(orcContainer, classList) {
-  const randomIndex = Math.floor(Math.random() * orcPathList.length);
-  const randomPath = classList[randomIndex];
-  orcContainer.classList.add(randomPath);
-}
-
 // ---------- ORC1 FUNCTIONS ---------- //
 
 function Orc1Spawn() {

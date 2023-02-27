@@ -9,17 +9,9 @@ let initialCrystalHP = 100; // How much HP the player has
 let crystalHP = initialCrystalHP; 
 let crystalHPSpeed = 200; // How fast the HP depletes while under attack, lower is faster
 let mana = 4;
-let kills = 0;
-let orcsAttacking = 0;
 let orbClicked = false;
 let hasGameFinished = false;
 
-let orc1SpawnTimerId;
-let orc2SpawnTimerId;
-let orc3SpawnTimerId;
-let orc4SpawnTimerId;
-let orc5SpawnTimerId;
-let orc6SpawnTimerId;
 let crystalHPTimerId;
 let countdownIntervalId;
 
@@ -57,12 +49,14 @@ function startGame() {
   elementsShow();
   countDown();
   spawnOrb();
-  Orc1Spawn();
-  Orc2Spawn();
-  Orc3Spawn();
-  Orc4Spawn();
-  Orc5Spawn();
-  Orc6Spawn();
+  // Orc1Spawn();
+  // Orc2Spawn();
+  // Orc3Spawn();
+  // Orc4Spawn();
+  // Orc5Spawn();
+  // Orc6Spawn();
+  orcSpawn(1);
+  
 
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 
