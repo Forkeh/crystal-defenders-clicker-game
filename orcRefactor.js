@@ -88,9 +88,7 @@ function orcClick(orcNumber) {
 
     orcContainer.classList.add("pauseAnimation");
     orcSprite.classList.add("orc_death");
-    document
-      .querySelector("#orc" + orcNum + "_shadow")
-      .classList.add("orc_death_shadow");
+    orcContainer.querySelector(".orc_shadow").classList.add("orc_death_shadow");
     orcSprite.classList.remove("orc_attack");
 
     orcSprite.setAttribute("src", "images/Orc/orc_death" + orcNum + ".png");
@@ -98,8 +96,8 @@ function orcClick(orcNumber) {
     setTimeout(() => {
       orcContainer.style.visibility = "hidden";
       orcSprite.classList.remove("orc_death");
-      document
-        .querySelector("#orc" + orcNum + "_shadow")
+      orcContainer
+        .querySelector(".orc_shadow")
         .classList.remove("orc_death_shadow");
 
       orcContainer.className = "";

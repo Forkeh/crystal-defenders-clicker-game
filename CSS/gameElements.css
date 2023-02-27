@@ -12,7 +12,7 @@
   z-index: 11;
 }
 
-#orc1_shadow {
+.orc_shadow {
   width: 40%;
   position: absolute;
   top: 75%;
