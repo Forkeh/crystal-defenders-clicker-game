@@ -1,3 +1,5 @@
+"use strict";
+
 let orc1SpawnTimerId;
 let orc2SpawnTimerId;
 let orc3SpawnTimerId;
@@ -54,7 +56,11 @@ function orcSpawn(orcNumber) {
   });
 }
 
+
+
+
 function orcAttack(orcNumber) {
+  
   console.log("ORC ATTACK");
   let orcNum = orcNumber;
   let orcSprite = document.querySelector("#orc" + orcNum + "_sprite");
@@ -69,9 +75,13 @@ function orcAttack(orcNumber) {
   orcSprite.setAttribute("src", "images/Orc/orc_attack.png");
 }
 
+
+
+
+
+
 function orcClick(orcNumber) {
   console.log("CLICK ORC");
-
   let orcNum = orcNumber;
   let orcSprite = document.querySelector("#orc" + orcNum + "_sprite");
   let orcContainer = document.querySelector("#orc" + orcNum + "_container");

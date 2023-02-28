@@ -1,8 +1,10 @@
+"use strict";
+
 // ---------- STOP GAME ---------- //
 
 function stopGame() {
   console.log("STOP GAME");
-  
+
   hasGameFinished = true;
   orcsAttacking = 0;
 
@@ -32,22 +34,21 @@ function stopGame() {
 
   document.querySelector("#healthText").classList.remove("critical_health");
 
-  
   orc1_container.className = "";
   orc1_sprite.className = "";
-  
+
   orc2_container.className = "";
   orc2_sprite.className = "";
-  
+
   orc3_container.className = "";
   orc3_sprite.className = "";
- 
+
   orc4_container.className = "";
   orc4_sprite.className = "";
-  
+
   orc5_container.className = "";
   orc5_sprite.className = "";
-  
+
   orc6_container.className = "";
   orc6_sprite.className = "";
 

@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- CRYSTAL STATES ---------- //
 
 function crystalHealth() {

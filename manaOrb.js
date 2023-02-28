@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- MANA ORB ---------- //
 
 function clickOrb() {

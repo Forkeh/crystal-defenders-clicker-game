@@ -56,6 +56,7 @@ function startGame() {
   // Orc6Spawn();
   orcSpawn(1);
   
+  
 
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 

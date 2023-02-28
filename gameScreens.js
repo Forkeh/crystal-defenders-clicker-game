@@ -1,8 +1,10 @@
+"use strict";
+
 // ---------- SHOW GAME SCREENS ---------- //
 
 function startGameButton() {
-  console.log('START GAME BUTTON');
-  document.querySelector('#start').classList.add('hidden');
+  console.log("START GAME BUTTON");
+  document.querySelector("#start").classList.add("hidden");
   startGame();
 }
 
@@ -21,5 +23,3 @@ function gameOverScreen() {
     "#orcs-killed-lose"
   ).innerHTML = `You killed ${kills} orcs!`;
 }
-
-

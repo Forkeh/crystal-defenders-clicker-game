@@ -1,5 +1,7 @@
+"use strict";
+
 function elementsShow() {
-    console.log('SHOW ELEMENTS');
+  console.log("SHOW ELEMENTS");
   energyContainer.classList.remove("hidden");
   crystalContainer.classList.remove("hidden");
   wizardContainer.classList.remove("hidden");
@@ -18,7 +20,7 @@ function elementsShow() {
 }
 
 function elementsHide() {
-    console.log('HIDDEN ELEMENTS');
+  console.log("HIDDEN ELEMENTS");
   energyContainer.classList.add("hidden");
   crystalContainer.classList.add("hidden");
   wizardContainer.classList.add("hidden");

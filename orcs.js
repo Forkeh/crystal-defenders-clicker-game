@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- ORC1 FUNCTIONS ---------- //
 
 function Orc1Spawn() {
@@ -311,7 +313,7 @@ function orc5Click() {
     orc5_sprite.setAttribute("src", "images/Orc/orc_death5.png");
 
     setTimeout(() => {
-      orc5_container.classList.add('hidden');
+      orc5_container.classList.add("hidden");
       orc5_sprite.classList.remove("orc_death");
       document
         .querySelector("#orc5_shadow")
