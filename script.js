@@ -16,8 +16,7 @@ let crystalHPTimerId;
 let countdownIntervalId;
 
 // ---------- GAME ELEMENTS ---------- //
-// const lightningImg = new Image();
-// lightningImg.src = "./images/Lightning/lightningStrike.png";
+
 
 const ligntningContainer = document.querySelector("#ligntningStrike_container");
 const energyContainer = document.querySelector("#energy_container");

@@ -1,5 +1,14 @@
 /* ---------- Game element containers ---------- */
 
+.orc_shadow {
+  width: 40%;
+  position: absolute;
+  top: 75%;
+  left: 27%;
+  filter: blur(4px) opacity(70%);
+  z-index: 10;
+}
+
 #orc1_container {
   width: 15%;
   position: absolute;
@@ -12,14 +21,6 @@
   z-index: 11;
 }
 
-.orc_shadow {
-  width: 40%;
-  position: absolute;
-  top: 75%;
-  left: 27%;
-  filter: blur(4px) opacity(70%);
-  z-index: 10;
-}
 
 #orc2_container {
   width: 15%;
@@ -34,14 +35,6 @@
   z-index: 11;
 }
 
-#orc2_shadow {
-  width: 40%;
-  position: absolute;
-  top: 75%;
-  left: 27%;
-  filter: blur(4px) opacity(70%);
-  z-index: 10;
-}
 
 #orc3_container {
   width: 15%;
@@ -54,15 +47,6 @@
 #orc3_sprite {
   position: relative;
   z-index: 11;
-}
-
-#orc3_shadow {
-  width: 40%;
-  position: absolute;
-  top: 75%;
-  left: 27%;
-  filter: blur(4px) opacity(70%);
-  z-index: 10;
 }
 
 #orc4_container {
@@ -78,15 +62,6 @@
   z-index: 11;
 }
 
-#orc4_shadow {
-  width: 40%;
-  position: absolute;
-  top: 75%;
-  left: 27%;
-  filter: blur(4px) opacity(70%);
-  z-index: 10;
-}
-
 #orc5_container {
   width: 15%;
   position: absolute;
@@ -100,15 +75,6 @@
   z-index: 11;
 }
 
-#orc5_shadow {
-  width: 40%;
-  position: absolute;
-  top: 75%;
-  left: 27%;
-  filter: blur(4px) opacity(70%);
-  z-index: 10;
-}
-
 #orc6_container {
   width: 15%;
   position: absolute;
@@ -119,15 +85,6 @@
 #orc6_sprite {
   position: relative;
   z-index: 11;
-}
-
-#orc6_shadow {
-  width: 40%;
-  position: absolute;
-  top: 75%;
-  left: 27%;
-  filter: blur(4px) opacity(70%);
-  /* z-index: 10; */
 }
 
 #troll_container {

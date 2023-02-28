@@ -43,14 +43,14 @@ function orcSpawn(orcNumber) {
   orcContainer.style.visibility = "visible";
   randomOrcPath(orcNum, orcPathList);
 
-  //   orcContainer.addEventListener("animationend", function () {
-  //     orcAttack(orcNum);
-  //     orcContainer.removeEventListener("animationend", orcAttack);
-  //   });
+  orcContainer.addEventListener("animationend", function () {
+    orcAttack(orcNum);
+    orcContainer.removeEventListener("animationend", orcAttack);
+  });
 
   orcSprite.addEventListener("mousedown", function () {
     orcClick(orcNum);
-    orcSprite.removeEventListener("mousedown", orcClick(orcNum));
+    orcSprite.removeEventListener("mousedown", orcClick);
   });
 }
 

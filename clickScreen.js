@@ -5,7 +5,6 @@ function clickScreen() {
   if (orbClicked === true) {
     wizardAttack();
   } else if (mana > 0) {
-    // clickLightning();
     wizardAttack();
     decrementMana();
   }
