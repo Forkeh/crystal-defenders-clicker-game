@@ -87,7 +87,7 @@ function orc1Attack() {
   
 
   orc1_sprite.classList.add("orc_attack");
-  orc1_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+  orc1_sprite.setAttribute("src", "images/Orc/orc_attack1.png");
 }
 
 // ---------- ORC2 FUNCTIONS ---------- //
@@ -159,7 +159,7 @@ function orc2Attack() {
   orc2_container.removeEventListener("animationend", orc2Attack);
 
   orc2_sprite.classList.add("orc_attack");
-  orc2_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+  orc2_sprite.setAttribute("src", "images/Orc/orc_attack2.png");
 }
 
 // ---------- ORC3 FUNCTIONS ---------- //
@@ -231,7 +231,7 @@ function orc3Attack() {
   orc3_container.removeEventListener("animationend", orc3Attack);
 
   orc3_sprite.classList.add("orc_attack");
-  orc3_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+  orc3_sprite.setAttribute("src", "images/Orc/orc_attack3.png");
 }
 
 // ---------- ORC4 FUNCTIONS ---------- //
@@ -303,7 +303,7 @@ function orc4Attack() {
   orc4_container.removeEventListener("animationend", orc4Attack);
 
   orc4_sprite.classList.add("orc_attack");
-  orc4_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+  orc4_sprite.setAttribute("src", "images/Orc/orc_attack4.png");
 }
 
 // ---------- ORC5 FUNCTIONS ---------- //
@@ -375,7 +375,7 @@ function orc5Attack() {
   orc5_container.removeEventListener("animationend", orc5Attack);
 
   orc5_sprite.classList.add("orc_attack");
-  orc5_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+  orc5_sprite.setAttribute("src", "images/Orc/orc_attack5.png");
 }
 
 // ---------- ORC6 FUNCTIONS ---------- //
@@ -446,5 +446,5 @@ function orc6Attack() {
   orc6_container.removeEventListener("animationend", orc6Attack);
 
   orc6_sprite.classList.add("orc_attack");
-  orc6_sprite.setAttribute("src", "images/Orc/orc_attack.png");
+  orc6_sprite.setAttribute("src", "images/Orc/orc_attack6.png");
 }
