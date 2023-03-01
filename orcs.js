@@ -37,7 +37,10 @@ function Orc1Spawn() {
 function orc1Click() {
   console.log("CLICK ORC1");
 
+  
   if (mana > 0) {
+    soundClickOrc();
+
     orc1_sprite.removeEventListener("mousedown", orc1Click);
     orc1_container.removeEventListener("animationend", orc1Attack);
 
@@ -79,7 +82,9 @@ function orc1Attack() {
   }
   console.log("ORCS ATTACKING: " + orcsAttacking);
 
+
   orc1_container.removeEventListener("animationend", orc1Attack);
+  
 
   orc1_sprite.classList.add("orc_attack");
   orc1_sprite.setAttribute("src", "images/Orc/orc_attack.png");
@@ -106,7 +111,10 @@ function Orc2Spawn() {
 function orc2Click() {
   console.log("CLICK ORC2");
 
+  
   if (mana > 0) {
+    soundClickOrc();
+
     orc2_sprite.removeEventListener("mousedown", orc2Click);
     orc2_container.removeEventListener("animationend", orc2Attack);
 
@@ -175,7 +183,10 @@ function Orc3Spawn() {
 function orc3Click() {
   console.log("CLICK ORC3");
 
+  
   if (mana > 0) {
+    soundClickOrc();
+
     orc3_sprite.removeEventListener("mousedown", orc3Click);
     orc3_container.removeEventListener("animationend", orc3Attack);
 
@@ -244,7 +255,10 @@ function Orc4Spawn() {
 function orc4Click() {
   console.log("CLICK ORC4");
 
+  
   if (mana > 0) {
+    soundClickOrc();
+
     orc4_sprite.removeEventListener("mousedown", orc4Click);
     orc4_container.removeEventListener("animationend", orc4Attack);
 
@@ -313,7 +327,10 @@ function Orc5Spawn() {
 function orc5Click() {
   console.log("CLICK ORC5");
 
+  
   if (mana > 0) {
+    soundClickOrc();
+
     orc5_sprite.removeEventListener("mousedown", orc5Click);
     orc5_container.removeEventListener("animationend", orc5Attack);
 
@@ -327,7 +344,7 @@ function orc5Click() {
     orc5_sprite.setAttribute("src", "images/Orc/orc_death5.png");
 
     setTimeout(() => {
-      orc5_container.classList.add('hidden');
+      orc5_container.classList.add("hidden");
       orc5_sprite.classList.remove("orc_death");
       document
         .querySelector("#orc5_shadow")
@@ -383,6 +400,8 @@ function orc6Click() {
   // console.log("CLICK ORC6");
 
   if (mana > 0) {
+    soundClickOrc();
+
     orc6_sprite.removeEventListener("mousedown", orc6Click);
     orc6_container.removeEventListener("animationend", orc6Attack);
 

@@ -90,7 +90,7 @@
 
 .orc_attack {
   animation-name: orc_attack;
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
   animation-fill-mode: both;

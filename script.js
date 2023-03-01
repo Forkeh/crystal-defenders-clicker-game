@@ -4,9 +4,9 @@ window.addEventListener("load", programStart);
 
 // ---------- GAME VARIABLES ---------- //
 let initialCountdown = 60; // How long the player has to survive to win
-let countdown = initialCountdown; 
+let countdown = initialCountdown;
 let initialCrystalHP = 100; // How much HP the player has
-let crystalHP = initialCrystalHP; 
+let crystalHP = initialCrystalHP;
 let crystalHPSpeed = 200; // How fast the HP depletes while under attack, lower is faster
 let mana = 4;
 let kills = 0;
@@ -49,12 +49,13 @@ const orc6_sprite = document.querySelector("#orc6_sprite");
 // ---------- GAME START ---------- //
 function programStart() {
   // console.log("PROGRAM START");
-
+  // musicTitle();
   elementsHide();
 }
 
 function startGame() {
   elementsShow();
+  musicGame();
   countDown();
   spawnOrb();
   Orc1Spawn();

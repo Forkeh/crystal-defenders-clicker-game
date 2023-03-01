@@ -12,6 +12,7 @@ function winScreen() {
   document.querySelector(
     "#orcs-killed-win"
   ).innerHTML = `You vanquished ${kills} orcs!`;
+  musicVictory();
 }
 
 function gameOverScreen() {
@@ -20,6 +21,7 @@ function gameOverScreen() {
   document.querySelector(
     "#orcs-killed-lose"
   ).innerHTML = `You killed ${kills} orcs!`;
+  musicDefeat();
 }
 
 

@@ -20,7 +20,8 @@
       <div id="game_elements">
 
         <div id="ligntningStrike_container" class="ligntningStrike_sprite">
-          <img class="spriteWidth" id="ligntingStrike_sprite" src="./images/Lightning/lightningStrike.png" alt="lightning_strike" />
+          <img class="spriteWidth" id="ligntingStrike_sprite" src="./images/Lightning/lightningStrike.png"
+            alt="lightning_strike" />
         </div>
 
         <!---------- Orc elements ---------->
@@ -121,13 +122,35 @@
       <div id="win_window">
         <div id="win_text">
           <h1>Victory!</h1>
-          You defended the kingdom! Glorious!
+          You defended the kingdom! Huzzah!
           <div id="orcs-killed-win">KILLS</div>
           <button onclick="restartGame()" class="screenButton">Restart Game</button>
         </div>
       </div>
     </div>
   </div>
+
+  <!---------- Sound and music ---------->
+  <audio id="musicTitle" src="sounds\musicTitle.mp3"></audio>
+  <audio id="musicGame" src="sounds\musicGame.mp3"></audio>
+  <audio id="musicVictory" src="sounds\musicVictory.mp3"></audio>
+  <audio id="victoryHuzzah" src="sounds\victoryHuzzah.mp3"></audio>
+  <audio id="musicDefeat" src="sounds\musicDefeat.mp3"></audio>
+  <audio id="clickSpell1" src="sounds\clickSpell1.mp3"></audio>
+  <audio id="clickSpell2" src="sounds\clickSpell2.mp3"></audio>
+  <audio id="clickOrb1" src="sounds\clickOrb1.mp3"></audio>
+  <audio id="clickOrb2" src="sounds\clickOrb2.mp3"></audio>
+  <audio id="clickNoMana1" src="sounds\clickNoMana1.mp3"></audio>
+  <audio id="clickNoMana2" src="sounds\clickNoMana2.mp3"></audio>
+  <audio id="orcDeath1" src="sounds\orcDeath1.mp3"></audio>
+  <audio id="orcDeath2" src="sounds\orcDeath2.mp3"></audio>
+  <audio id="orcDeath3" src="sounds\orcDeath3.mp3"></audio>
+  <audio id="crystalHit1" src="sounds\crystalHit1.mp3"></audio>
+  <audio id="crystalHit2" src="sounds\crystalHit2.mp3"></audio>
+  <audio id="crystalHit3" src="sounds\crystalHit3.mp3"></audio>
+  <audio id="crystalHit4" src="sounds\crystalHit4.mp3"></audio>
+  <audio id="crystalHit5" src="sounds\crystalHit5.mp3"></audio>
+
 
   <!---------- Javascript import ---------->
   <script src="script.js"></script>
@@ -142,6 +165,7 @@
   <script src="stopRestartGame.js"></script>
   <script src="elementVisibilty.js"></script>
   <script src="lightningOnClick.js"></script>
+  <script src="soundsAndMusic.js"></script>
 </body>
 
 </html>

@@ -29,5 +29,12 @@ function crystalHealth() {
 function crystalAttacked() {
   if (orcsAttacking > 0) {
     document.querySelector("#crystal_sprite").classList.add("crystal_attacked");
+
+    orc1_sprite.addEventListener("animationiteration", soundCrystalHit);
+    orc2_sprite.addEventListener("animationiteration", soundCrystalHit);
+    orc3_sprite.addEventListener("animationiteration", soundCrystalHit);
+    orc4_sprite.addEventListener("animationiteration", soundCrystalHit);
+    orc5_sprite.addEventListener("animationiteration", soundCrystalHit);
+    orc6_sprite.addEventListener("animationiteration", soundCrystalHit);
   }
 }
