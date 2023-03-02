@@ -48,7 +48,6 @@ const orc6_sprite = document.querySelector("#orc6_sprite");
 
 // ---------- GAME START ---------- //
 function programStart() {
-  // console.log("PROGRAM START");
   // musicTitle();
   elementsHide();
 }

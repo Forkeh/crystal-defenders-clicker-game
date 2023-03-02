@@ -9,7 +9,7 @@ function musicGame() {
   document.querySelector("#musicVictory").pause();
   document.querySelector("#musicDefeat").pause();
   document.querySelector("#musicGame").currentTime = 0;
-  document.querySelector("#musicGame").volume = 0.2;
+  document.querySelector("#musicGame").volume = 0.1;
   document.querySelector("#musicGame").play();
 }
 
@@ -35,7 +35,7 @@ function musicDefeat() {
 function soundClickScreen() {
   if (Math.random() < 0.5) {
     document.querySelector("#clickSpell1").currentTime = 0;
-    document.querySelector("#clickSpell1").volume = 0.5;
+    document.querySelector("#clickSpell1").volume = 0.4;
     document.querySelector("#clickSpell1").play();
   } else {
     document.querySelector("#clickSpell2").currentTime = 0;
@@ -45,13 +45,13 @@ function soundClickScreen() {
 }
 function soundClickNoMana() {
   document.querySelector("#clickNoMana1").currentTime = 0;
-  document.querySelector("#clickNoMana1").volume = 0.5;
+  document.querySelector("#clickNoMana1").volume = 0.3;
   document.querySelector("#clickNoMana1").play();
 }
 
 function soundClickOrb() {
   document.querySelector("#clickOrb2").currentTime = 0;
-  document.querySelector("#clickOrb2").volume = 0.5;
+  document.querySelector("#clickOrb2").volume = 0.3;
   document.querySelector("#clickOrb2").play();
 }
 
@@ -59,16 +59,16 @@ function soundCrystalHit() {
   console.log("SOUND CRYSTAL HIT");
   const randomNum = Math.random();
   if (randomNum > 0.8) {
-    document.querySelector("#crystalHit2").volume = 0.5;
+    document.querySelector("#crystalHit2").volume = 0.1;
     document.querySelector("#crystalHit2").play();
   } else if (randomNum > 0.6) {
-    document.querySelector("#crystalHit3").volume = 0.2;
+    document.querySelector("#crystalHit3").volume = 0.1;
     document.querySelector("#crystalHit3").play();
   } else if (randomNum > 0.4) {
-    document.querySelector("#crystalHit4").volume = 0.2;
+    document.querySelector("#crystalHit4").volume = 0.1;
     document.querySelector("#crystalHit4").play();
   } else if (randomNum > 0.2) {
-    document.querySelector("#crystalHit5").volume = 0.2;
+    document.querySelector("#crystalHit5").volume = 0.1;
     document.querySelector("#crystalHit5").play();
   }
 }
@@ -76,17 +76,27 @@ function soundCrystalHit() {
 function soundClickOrc() {
   if (Math.random() > 0.8) {
     document.querySelector("#orcDeath1").currentTime = 0;
-    document.querySelector("#orcDeath1").volume = 0.5;
+    document.querySelector("#orcDeath1").volume = 0.3;
     document.querySelector("#orcDeath1").play();
   } else if (Math.random() > 0.7) {
     document.querySelector("#orcDeath2").currentTime = 0;
-    document.querySelector("#orcDeath2").volume = 0.5;
+    document.querySelector("#orcDeath2").volume = 0.3;
     document.querySelector("#orcDeath2").play();
   } else if (Math.random() > 0.5) {
     document.querySelector("#orcDeath3").currentTime = 0;
-    document.querySelector("#orcDeath3").volume = 0.5;
+    document.querySelector("#orcDeath3").volume = 0.3;
     document.querySelector("#orcDeath3").play();
   } else if (Math.random() > 0.4) {
+    // Play no sound
+  }
+}
+
+function soundSpawnOrc() {
+  if (Math.random() > 0.5) {
+    document.querySelector("#grassRun1").currentTime = 0;
+    document.querySelector("#grassRun1").volume = 0.2;
+    document.querySelector("#grassRun1").play();
+  } else {
     // Play no sound
   }
 }

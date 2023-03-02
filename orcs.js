@@ -19,6 +19,8 @@ function randomOrcPath(orcContainer, classList) {
 function Orc1Spawn() {
   // console.log("SPAWN ORC1");
 
+  soundSpawnOrc();
+
   orc1SpawnTimerId = setTimeout(() => {
     orc1_container.classList.remove("pauseAnimation");
     randomOrcPath(orc1_container, orcPathList);
@@ -95,6 +97,8 @@ function orc1Attack() {
 function Orc2Spawn() {
   // console.log("SPAWN ORC2");
 
+  soundSpawnOrc();
+
   orc2SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc2_container, orcPathList);
     orc2_container.style.pointerEvents = "auto";
@@ -167,6 +171,8 @@ function orc2Attack() {
 function Orc3Spawn() {
   // console.log("SPAWN ORC3");
 
+  soundSpawnOrc();
+
   orc3SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc3_container, orcPathList);
     orc3_container.style.pointerEvents = "auto";
@@ -237,7 +243,9 @@ function orc3Attack() {
 // ---------- ORC4 FUNCTIONS ---------- //
 
 function Orc4Spawn() {
-  console.log("SPAWN ORC4");
+  // console.log("SPAWN ORC4");
+
+  soundSpawnOrc();
 
   orc4SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc4_container, orcPathList);
@@ -309,7 +317,9 @@ function orc4Attack() {
 // ---------- ORC5 FUNCTIONS ---------- //
 
 function Orc5Spawn() {
-  console.log("SPAWN ORC5");
+  // console.log("SPAWN ORC5");
+
+  soundSpawnOrc();
 
   orc5SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc5_container, orcPathList);
@@ -382,6 +392,8 @@ function orc5Attack() {
 
 function Orc6Spawn() {
   // console.log("SPAWN ORC6");
+
+  soundSpawnOrc();
 
   orc6SpawnTimerId = setTimeout(() => {
     randomOrcPath(orc6_container, orcPathList);
