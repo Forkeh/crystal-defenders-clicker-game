@@ -1,3 +1,4 @@
+
 #game_over {
   grid-area: 1/1;
   width: 100%;
@@ -31,6 +32,7 @@
 #game_over_text h1 {
   font-size: 6vw;
   text-align: center;
+  color: rgb(102, 0, 0);
 }
 #game_over_text {
   text-align: center;

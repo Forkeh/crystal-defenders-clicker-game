@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="style.css" />
   <title>Clicker Game - Crystal Defender</title>
 </head>
@@ -100,7 +101,8 @@
     <div id="start">
       <div id="start_window">
         <div id="start_text">
-          <h1>Crystal Defender</h1>
+          <h1 class="screen_titles"><img src="images\logo.png" alt="" srcset="">
+</h1>
           Press the button to the start the game!
           <button onclick="startGameButton()" class="screenButton" id="startGameButton">Start Game</button>
         </div>
@@ -110,7 +112,7 @@
     <div id="game_over">
       <div id="game_over_window">
         <div id="game_over_text">
-          <h1>You've perished!</h1>
+          <h1 class="screen_titles">You've perished!</h1>
           You failed to protect the kingdom! Shame!
           <div id="orcs-killed-lose">KILLS</div>
           <button onclick="restartGame()" class="screenButton">Restart Game</button>
@@ -121,7 +123,7 @@
     <div id="win">
       <div id="win_window">
         <div id="win_text">
-          <h1>Victory!</h1>
+          <h1 class="screen_titles">Victory!</h1>
           You defended the kingdom! Huzzah!
           <div id="orcs-killed-win">KILLS</div>
           <button onclick="restartGame()" class="screenButton">Restart Game</button>
