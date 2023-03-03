@@ -56,7 +56,6 @@ function soundClickOrb() {
 }
 
 function soundCrystalHit() {
-  console.log("SOUND CRYSTAL HIT");
   const randomNum = Math.random();
   if (randomNum > 0.8) {
     document.querySelector("#crystalHit2").volume = 0.1;

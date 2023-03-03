@@ -12,6 +12,7 @@ function stopGame() {
   clearTimeout(orc4SpawnTimerId);
   clearTimeout(orc5SpawnTimerId);
   clearTimeout(orc6SpawnTimerId);
+  clearTimeout(reaperSpawnTimerId);
   clearInterval(crystalHPTimerId);
   clearInterval(countdownIntervalId);
 
@@ -27,6 +28,8 @@ function stopGame() {
   orc5_sprite.removeEventListener("animationend", orc5Attack);
   orc6_container.removeEventListener("animationend", orc6Attack);
   orc6_sprite.removeEventListener("animationend", orc6Attack);
+  // reaper_sprite.removeEventListener("animationend", reaperAttack);
+  // reaper_container.removeEventListener("animationend", reaperAttack);
 
   crystalsprite.classList.remove("crystal_attacked");
 
@@ -50,6 +53,9 @@ function stopGame() {
   
   orc6_container.className = "";
   orc6_sprite.className = "";
+  
+  reaper_container.className = "";
+  reaper_sprite.className = "";
 
   elementsHide();
 }
@@ -61,8 +67,7 @@ function restartGame() {
   document.querySelector("#win").style.visibility = "hidden";
   document.querySelector("#game_over").style.visibility = "hidden";
 
-  elementsShow();
-
+  
   countdown = initialCountdown;
   crystalHP = initialCrystalHP;
   crystalHPSpeed = 200;
@@ -71,6 +76,7 @@ function restartGame() {
   orcsAttacking = 0;
   orbClicked = false;
   hasGameFinished = false;
+  elementsShow();
   fullMana();
   // resetOrb();
   startGame();

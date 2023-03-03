@@ -60,31 +60,33 @@
 @keyframes orc_path_01 {
   0% {
     transform: translate(-100%, 0%);
+    z-index: 2;
   }
   100% {
     transform: translate(460%, 0%);
-    z-index: 10;
+    z-index: 2;
   }
 }
 
 @keyframes orc_path_02 {
   0% {
     transform: translate(-100%, -70%);
+
   }
   100% {
     transform: translate(460%, -20%);
-    z-index: 9;
+    z-index: 1;
   }
 }
 
 @keyframes orc_path_03 {
   0% {
     transform: translate(-100%, 70%);
-    z-index: 10;
+    z-index: 6;
   }
   100% {
     transform: translate(460%, 20%);
-    z-index: 12;
+    z-index: 6;
   }
 }
 
@@ -120,12 +122,12 @@
     filter: brightness(400%) drop-shadow(0px 0px 0px rgb(214, 242, 255));
   }
   10% {
-    filter: brightness(100%) grayscale(100%) drop-shadow(0px 0px 8px rgb(214, 242, 255)) blur(2px);
+    filter: brightness(100%) grayscale(100%)
+      drop-shadow(0px 0px 8px rgb(214, 242, 255)) blur(2px);
   }
-  
+
   20% {
     filter: grayscale(70%) drop-shadow(0px 0px 0px rgb(214, 242, 255));
-
   }
   80% {
     filter: grayscale(50%);
@@ -149,9 +151,8 @@
   }
   10% {
   }
-  
-  20% {
 
+  20% {
   }
   80% {
     opacity: 100%;
@@ -161,21 +162,39 @@
   }
 }
 
-/* ---------- Troll animations ---------- */
+/* ---------- Reaper animations ---------- */
 
-.troll {
-  /* animation-name: troll_path_01; */
+.reaper_path {
+  animation-name: reaper_path;
   animation-duration: 10s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes reaper_path {
+  0% {
+    z-index: 5;
+    transform: translate(-60%);
+  }
+  100% {
+    z-index: 5;
+    transform: translate(360%);
+  }
+}
+
+.reaper_attack {
+  animation-name: reaper_attack;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: both;
 }
-@keyframes troll_path_01 {
+@keyframes reaper_attack {
   0% {
-    transform: translate(0);
+    z-index: 5;
   }
   100% {
-    transform: translate(150%);
+    z-index: 5;
   }
 }
 
@@ -398,7 +417,7 @@
 /* /* ---------- Critical health ---------- */
 .screen_titles {
   animation-name: screen_titles;
-  animation-duration: 5.0s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
@@ -408,7 +427,7 @@
     filter: drop-shadow(0px 0px 0.5px black);
     transform: scale(100%);
   }
-  
+
   50% {
     filter: drop-shadow(1px 1px 2px black);
     transform: scale(102%);

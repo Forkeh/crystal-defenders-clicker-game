@@ -130,12 +130,26 @@
   /* z-index: 10; */
 }
 
-#troll_container {
+#reaper_container {
   position: absolute;
-  width: 50%;
-  top: 30%;
+  width: 25%;
+  top: 40%;
   left: -30%;
-  visibility: hidden;
+  /* visibility: hidden; */
+}
+
+#reaper_sprite {
+  position: relative;
+  z-index: 11;
+}
+
+#reaper_shadow {
+  width: 40%;
+  position: absolute;
+  top: 75%;
+  left: 27%;
+  filter: blur(4px) opacity(70%);
+  /* z-index: 10; */
 }
 
 #wizard_container {
@@ -165,7 +179,7 @@
   top: 45%;
   left: 75%;
   pointer-events: none;
-  z-index: 10;
+  z-index: 4;
 }
 
 #crystal_shadow {
@@ -174,7 +188,7 @@
   top: 110%;
   left: 27%;
   filter: blur(4px) opacity(50%);
-  z-index: 10;
+  z-index: 4;
 }
 
 #energy_container {

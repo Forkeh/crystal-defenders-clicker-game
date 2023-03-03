@@ -20,6 +20,7 @@ let orc3SpawnTimerId;
 let orc4SpawnTimerId;
 let orc5SpawnTimerId;
 let orc6SpawnTimerId;
+let reaperSpawnTimerId;
 let crystalHPTimerId;
 let countdownIntervalId;
 
@@ -43,6 +44,8 @@ const orc5_container = document.querySelector("#orc5_container");
 const orc5_sprite = document.querySelector("#orc5_sprite");
 const orc6_container = document.querySelector("#orc6_container");
 const orc6_sprite = document.querySelector("#orc6_sprite");
+const reaper_container = document.querySelector('#reaper_container');
+const reaper_sprite = document.querySelector('#reaper_sprite');
 
 // ---------- GAME START ---------- //
 function programStart() {
@@ -61,6 +64,7 @@ function startGame() {
   Orc4Spawn();
   Orc5Spawn();
   Orc6Spawn();
+  reaperSpawn();
 
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 
