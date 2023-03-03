@@ -1,0 +1,67 @@
+/*-------- Screens container setup --------*/
+
+#start, #game_over, #win {
+  grid-area: 1/1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  z-index: 100;
+}
+
+/*-------- Lose and win containers hidden on startup --------*/
+#game_over, #win {
+visibility: hidden;
+}
+
+/*-------- Screens windows setup --------*/
+#start_window, #game_over_window, #win_window {
+  grid-area: 1/1;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/GUI/window.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative; 
+}
+
+/*-------- Window text --------*/
+#start_text, #game_over_text, #win_text {
+  width: 60%;
+  top: 20%;
+  left: 20%;
+  position: absolute;
+  font-size: 2vw;
+  text-align: center;
+}
+
+#start_text h1 {
+  font-size: 6vw;
+  text-align: center;
+}
+
+#game_over_text {
+  text-align: center;
+  top: 10%;
+}
+
+#game_over_text h1 {
+  font-size: 8vw;
+  text-align: center;
+  color: rgb(102, 0, 0);
+  margin-bottom: 34px;
+}
+
+#win_text {
+  text-align: center;
+  top: 10%;
+}
+
+#win_text h1 {
+  font-size: 13vw;
+  text-align: center;
+  color: rgb(255, 204, 0);
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
