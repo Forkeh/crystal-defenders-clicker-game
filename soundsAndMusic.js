@@ -20,7 +20,7 @@ function musicVictory() {
   document.querySelector("#musicVictory").volume = 0.4;
   document.querySelector("#musicVictory").play();
   document.querySelector("#victoryHuzzah").currentTime = 0;
-  document.querySelector("#victoryHuzzah").volume = 0.8;
+  document.querySelector("#victoryHuzzah").volume = 0.6;
   document.querySelector("#victoryHuzzah").play();
 }
 
@@ -39,7 +39,7 @@ function soundClickScreen() {
     document.querySelector("#clickSpell1").play();
   } else {
     document.querySelector("#clickSpell2").currentTime = 0;
-    document.querySelector("#clickSpell2").volume = 0.3;
+    document.querySelector("#clickSpell2").volume = 0.2;
     document.querySelector("#clickSpell2").play();
   }
 }

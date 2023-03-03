@@ -3,7 +3,7 @@
 function clickOrb() {
   orbClicked = true;
   fullMana();
-  console.log("CLICK ORB: " + mana + " mana");
+  // console.log("CLICK ORB: " + mana + " mana");
 
   energySprite.removeEventListener("mousedown", clickOrb);
 

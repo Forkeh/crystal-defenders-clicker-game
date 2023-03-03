@@ -7,7 +7,6 @@ function clickScreen() {
     wizardAttack();
   } else if (mana > 0) {
     soundClickScreen();
-    // clickLightning();
     wizardAttack();
     decrementMana();
   } else {

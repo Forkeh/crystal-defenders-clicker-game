@@ -11,7 +11,7 @@ function countDown() {
       winScreen();
     } else if (hasGameFinished) {
       clearInterval(countdownIntervalId);
-      console.log("COUNTDOWN STOP");
+      // console.log("COUNTDOWN STOP");
     }
   }, 1000);
 }

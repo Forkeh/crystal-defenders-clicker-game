@@ -4,7 +4,7 @@ function decrementMana() {
   document.querySelector("#mana" + mana).classList.remove("active_mana");
   document.querySelector("#mana" + mana).classList.add("inactive_mana");
   mana--;
-  console.log("CURRENT MANA: " + mana);
+  // console.log("CURRENT MANA: " + mana);
 }
 
 function fullMana() {
