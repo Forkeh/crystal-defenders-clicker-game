@@ -3,14 +3,14 @@
 window.addEventListener("load", programStart);
 
 // ---------- GAME VARIABLES ---------- //
-let initialCountdown = 60; // How long the player has to survive to win
+const initialCountdown = 60; // How long the player has to survive to win
 let countdown = initialCountdown;
-let initialCrystalHP = 100; // How much HP the player has
+const initialCrystalHP = 100; // How much HP the player has
 let crystalHP = initialCrystalHP;
 let crystalHPSpeed = 200; // How fast the HP depletes while under attack, lower is faster
 let mana = 4; // How many times you can click before needing to 'reload' with an orb
 let kills = 0; // keeps track of overall kills
-let InitialReaperHP = 10; // How much HP the reaper has
+const InitialReaperHP = 10; // How much HP the reaper has
 let reaperHP = InitialReaperHP; // How much HP the reaper has
 let orcsAttacking = 0; // Keeps track of how many orcs are hitting the crystal
 let orbClicked = false;
@@ -50,6 +50,7 @@ const orc6_sprite = document.querySelector("#orc6_sprite");
 const reaper_container = document.querySelector('#reaper_container');
 const reaper_sprite = document.querySelector('#reaper_sprite');
 const reaper_hp_text = document.querySelector("#reaper_hp_text");
+const boss_approaching_text = document.querySelector("#boss_approaching_text");
 
 // ---------- GAME START ---------- //
 function programStart() {
@@ -69,7 +70,6 @@ function startGame() {
   Orc5Spawn();
   Orc6Spawn();
   reaperSpawn();
-
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 
   document.querySelector("#game").addEventListener("mousedown", clickScreen);

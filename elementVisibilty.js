@@ -38,4 +38,5 @@ function elementsHide() {
   orc6_sprite.classList.add("hidden");
   reaper_container.classList.add("hidden");
   reaper_sprite.classList.add("hidden");
+  boss_approaching_text.classList.add("hidden");
 }

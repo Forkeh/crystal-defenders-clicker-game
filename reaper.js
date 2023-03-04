@@ -1,6 +1,12 @@
 function reaperSpawn() {
   reaperSpawnTimerId = setTimeout(() => {
     console.log("REAPER SPAWN");
+
+    soundBossApproaching();
+
+    boss_approaching_text.classList.remove("hidden");
+    boss_approaching_text.classList.add("boss_approaching");
+
     reaper_hp_text.style.visibility = "visible";
     reaper_hp_text.classList.add("reaper_hp_text");
     reaper_hp_text.innerHTML = reaperHP + " HP";
@@ -13,7 +19,7 @@ function reaperSpawn() {
 }
 
 function reaperAttack() {
-  console.log('REAPER ATTACK');
+  console.log("REAPER ATTACK");
   reaper_container.style.pointerEvents = "none";
   reaper_sprite.setAttribute("src", "images/Reaper/reaper_attack.png");
   reaper_container.removeEventListener("animationend", reaperAttack);
@@ -27,13 +33,16 @@ function reaperAttack() {
 function reaperClick() {
   console.log(`CLICK REAPER`);
   if (mana > 0) {
+    soundReaperHit();
+
     reaperHP--;
+
     reaper_hp_text.innerHTML = reaperHP + " HP";
+    
     if (reaperHP > 0) {
       console.log(`REAPER HP: ${reaperHP}`);
       // reaper_sprite.classList.add("reaper_click");
-
-    } else if (reaperHP === 0){
+    } else if (reaperHP === 0) {
       reaper_hp_text.style.visibility = "hidden";
       reaperDeath();
     }
@@ -41,7 +50,10 @@ function reaperClick() {
 }
 
 function reaperDeath() {
-  console.log('REAPER DEATH');
+  console.log("REAPER DEATH");
+
+  soundReaperDeath();
+
   reaper_sprite.removeEventListener("mousedown", reaperClick);
   reaper_sprite.removeEventListener("animationend", reaperGameOver);
   reaper_container.removeEventListener("animationend", reaperAttack);

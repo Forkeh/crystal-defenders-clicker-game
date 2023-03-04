@@ -54,6 +54,8 @@ function stopGame() {
   reaper_container.className = "";
   reaper_sprite.className = "";
 
+  boss_approaching_text.className = "";
+  
   elementsHide();
 }
 

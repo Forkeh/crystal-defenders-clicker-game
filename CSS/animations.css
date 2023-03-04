@@ -466,7 +466,7 @@
 /* ---------- Screen animations ---------- */
 .screen_enter {
   animation-name: screen_enter;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
@@ -489,10 +489,10 @@
 
 .screen_exit {
   animation-name: screen_exit;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-fill-mode:backwards;
+  animation-fill-mode: backwards;
 }
 
 @keyframes screen_exit {
@@ -512,7 +512,7 @@
 
 .screen_black_enter {
   animation-name: screen_black_enter;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-fill-mode: both;
@@ -532,7 +532,7 @@
 
 .screen_black_exit {
   animation-name: screen_black_exit;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-fill-mode: both;
@@ -546,6 +546,34 @@
     opacity: 100%;
   }
   100% {
+    opacity: 0%;
+  }
+}
+
+/* ---------- Boss approaching text ---------- */
+.boss_approaching {
+  animation-name: boss_approaching;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes boss_approaching {
+  0% {
+    transform: scale(0%);
+    opacity: 0%;
+  }
+
+  10% {
+    transform: scale(95%);
+    opacity: 100%;
+  }
+  90% {
+    opacity: 100%;
+  }
+  100% {
+    transform: scale(100%);
     opacity: 0%;
   }
 }

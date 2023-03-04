@@ -99,3 +99,26 @@ function soundSpawnOrc() {
     // Play no sound
   }
 }
+
+function soundBossApproaching() {
+  document.querySelector("#boss_approaching_sound").currentTime = 0;
+  document.querySelector("#boss_approaching_sound").volume = 0.3;
+  document.querySelector("#boss_approaching_sound").play();
+}
+
+function soundReaperHit() {
+  if (Math.random() > 0.7) {
+    document.querySelector("#reaper_hit").currentTime = 0;
+    document.querySelector("#reaper_hit").volume = 0.5;
+    document.querySelector("#reaper_hit").play();
+  } else {
+    // Play no sound
+  }
+}
+
+function soundReaperDeath() {
+  document.querySelector("#reaper_hit").pause();
+  document.querySelector("#reaper_death").currentTime = 0;
+  document.querySelector("#reaper_death").volume = 0.5;
+  document.querySelector("#reaper_death").play();
+}
