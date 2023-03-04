@@ -165,7 +165,7 @@
 
 .reaper_path {
   animation-name: reaper_path;
-  animation-duration: 10s;
+  animation-duration: 15s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: both;

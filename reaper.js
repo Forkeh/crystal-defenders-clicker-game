@@ -1,10 +1,15 @@
 function reaperSpawn() {
-  console.log("REAPER SPAWN");
-  reaper_container.classList.add("reaper_path");
-  reaper_sprite.setAttribute("src", "images/Reaper/reaper_run.png");
-  reaper_container.style.pointerEvents = "auto";
-  reaper_container.addEventListener("animationend", reaperAttack);
-  reaper_container.addEventListener("mousedown", reaperClick);
+  reaperSpawnTimerId = setTimeout(() => {
+    console.log("REAPER SPAWN");
+    reaper_hp_text.style.visibility = "visible";
+    reaper_hp_text.classList.add("reaper_hp_text");
+    reaper_hp_text.innerHTML = reaperHP + " HP";
+    reaper_container.classList.add("reaper_path");
+    reaper_sprite.setAttribute("src", "images/Reaper/reaper_run.png");
+    reaper_container.style.pointerEvents = "auto";
+    reaper_container.addEventListener("animationend", reaperAttack);
+    reaper_container.addEventListener("mousedown", reaperClick);
+  }, 40000);
 }
 
 function reaperAttack() {
@@ -23,11 +28,13 @@ function reaperClick() {
   console.log(`CLICK REAPER`);
   if (mana > 0) {
     reaperHP--;
+    reaper_hp_text.innerHTML = reaperHP + " HP";
     if (reaperHP > 0) {
       console.log(`REAPER HP: ${reaperHP}`);
       // reaper_sprite.classList.add("reaper_click");
 
     } else if (reaperHP === 0){
+      reaper_hp_text.style.visibility = "hidden";
       reaperDeath();
     }
   }

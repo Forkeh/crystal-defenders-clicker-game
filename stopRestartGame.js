@@ -80,10 +80,10 @@ function restartGame() {
   
   countdown = initialCountdown;
   crystalHP = initialCrystalHP;
+  reaperHP = InitialReaperHP;
   crystalHPSpeed = 200;
   mana = 4;
   kills = 0;
-  reaperHP = 5;
   orcsAttacking = 0;
   orbClicked = false;
   hasGameFinished = false;
