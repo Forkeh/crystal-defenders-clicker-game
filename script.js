@@ -8,12 +8,14 @@ let countdown = initialCountdown;
 let initialCrystalHP = 100; // How much HP the player has
 let crystalHP = initialCrystalHP;
 let crystalHPSpeed = 200; // How fast the HP depletes while under attack, lower is faster
-let mana = 4;
-let kills = 0;
-let orcsAttacking = 0;
+let mana = 4; // How many times you can click before needing to 'reload' with an orb
+let kills = 0; // keeps track of overall kills
+let reaperHP = 5; // How much HP the reaper has
+let orcsAttacking = 0; // Keeps track of how many orcs are hitting the crystal
 let orbClicked = false;
 let hasGameFinished = false;
 
+// Timer Id's, using these to stop timers if game ends
 let orc1SpawnTimerId;
 let orc2SpawnTimerId;
 let orc3SpawnTimerId;

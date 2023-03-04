@@ -1,8 +1,8 @@
 // ---------- STOP GAME ---------- //
 
 function stopGame() {
-  console.log("STOP GAME");
-  
+  // console.log("STOP GAME");
+
   hasGameFinished = true;
   orcsAttacking = 0;
 
@@ -28,32 +28,29 @@ function stopGame() {
   orc5_sprite.removeEventListener("animationend", orc5Attack);
   orc6_container.removeEventListener("animationend", orc6Attack);
   orc6_sprite.removeEventListener("animationend", orc6Attack);
-  // reaper_sprite.removeEventListener("animationend", reaperAttack);
-  // reaper_container.removeEventListener("animationend", reaperAttack);
 
   crystalsprite.classList.remove("crystal_attacked");
 
   document.querySelector("#healthText").classList.remove("critical_health");
 
-  
   orc1_container.className = "";
   orc1_sprite.className = "";
-  
+
   orc2_container.className = "";
   orc2_sprite.className = "";
-  
+
   orc3_container.className = "";
   orc3_sprite.className = "";
- 
+
   orc4_container.className = "";
   orc4_sprite.className = "";
-  
+
   orc5_container.className = "";
   orc5_sprite.className = "";
-  
+
   orc6_container.className = "";
   orc6_sprite.className = "";
-  
+
   reaper_container.className = "";
   reaper_sprite.className = "";
 
@@ -64,15 +61,29 @@ function stopGame() {
 
 function restartGame() {
   console.log("RESTART GAME");
-  document.querySelector("#win").style.visibility = "hidden";
-  document.querySelector("#game_over").style.visibility = "hidden";
+// document.querySelector("#win").classList.remove("screen_black_enter");
+// document.querySelector("#win_window").classList.remove("screen_enter");
+  document.querySelector("#win").classList.add("screen_black_exit");
+  document.querySelector("#win_window").classList.add("screen_exit");
+  document.querySelector("#game_over").classList.add("screen_black_exit");
+  document.querySelector("#game_over_window").classList.add("screen_exit");
 
+  setTimeout(() => {
+    document.querySelector("#win").classList.remove("screen_black_exit");
+    document.querySelector("#win_window").classList.remove("screen_exit");
+    document.querySelector("#game_over").classList.remove("screen_black_exit");
+    document.querySelector("#game_over_window").classList.remove("screen_exit");
+    document.querySelector("#win").style.visibility = "hidden";
+    document.querySelector("#game_over").style.visibility = "hidden";
+  }, 1000);
+  
   
   countdown = initialCountdown;
   crystalHP = initialCrystalHP;
   crystalHPSpeed = 200;
   mana = 4;
   kills = 0;
+  reaperHP = 5;
   orcsAttacking = 0;
   orbClicked = false;
   hasGameFinished = false;
@@ -80,4 +91,5 @@ function restartGame() {
   fullMana();
   // resetOrb();
   startGame();
+
 }
