@@ -62,12 +62,13 @@ function stopGame() {
 // ---------- RESTART GAME ---------- //
 
 function restartGame() {
-  console.log("RESTART GAME");
+  // console.log("RESTART GAME");
 
   soundClickButton();
 
-  // document.querySelector("#win").classList.remove("screen_black_enter");
-  // document.querySelector("#win_window").classList.remove("screen_enter");
+  game_over.querySelector("button").removeEventListener("mousedown", restartGame);
+  win.querySelector("button").removeEventListener("mousedown", restartGame);
+
   document.querySelector("#win").classList.add("screen_black_exit");
   document.querySelector("#win_window").classList.add("screen_exit");
   document.querySelector("#game_over").classList.add("screen_black_exit");

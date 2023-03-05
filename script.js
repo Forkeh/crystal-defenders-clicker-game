@@ -3,7 +3,7 @@
 window.addEventListener("load", programStart);
 
 // ---------- GAME VARIABLES ---------- //
-const initialCountdown = 6; // How long the player has to survive to win
+const initialCountdown = 60; // How long the player has to survive to win
 let countdown = initialCountdown;
 const initialCrystalHP = 100; // How much HP the player has
 let crystalHP = initialCrystalHP;
@@ -56,6 +56,8 @@ const boss_approaching_text = document.querySelector("#boss_approaching_text");
 function programStart() {
   // musicTitle();
   elementsHide();
+  start.querySelector("button").addEventListener("mousedown", startGameButton);
+
 }
 
 function startGame() {
@@ -73,4 +75,6 @@ function startGame() {
   crystalHealth(crystalHPSpeed); // How fast crystal loses hp
 
   document.querySelector("#game").addEventListener("mousedown", clickScreen);
+
+  
 }
