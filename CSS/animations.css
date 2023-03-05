@@ -165,7 +165,7 @@
 
 .reaper_path {
   animation-name: reaper_path;
-  animation-duration: 15s;
+  animation-duration: 18s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
@@ -271,9 +271,9 @@
 
 /* ---------- Energy orb animations ---------- */
 
-.energy_move {
+.energy_path1 {
   animation-name: energy_path_01;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
@@ -297,6 +297,35 @@
   100% {
     transform: translateX(1900%);
     top: 20%;
+  }
+}
+
+.energy_path2 {
+  animation-name: energy_path_02;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes energy_path_02 {
+  0% {
+    transform: translateX(1900%);
+    top: 40%;
+  }
+  25% {
+    top: 20%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  75% {
+    top: 15%;
+  }
+  100% {
+    transform: translateX(-300%);
+    top: 30%;
   }
 }
 

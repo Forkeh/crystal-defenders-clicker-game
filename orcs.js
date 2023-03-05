@@ -1,6 +1,6 @@
 // ---------- ORC RANDOM SPAWN DELAY ---------- //
 function randomSpawnDelay() {
-  const delay = Math.floor(Math.random() * 3000) + 1000;
+  const delay = Math.floor(Math.random() * 5000) + 1000;
   return delay;
 }
 

@@ -1,9 +1,9 @@
 // ---------- MANA ORB ---------- //
 
 function clickOrb() {
+  // console.log("CLICK ORB: " + mana + " mana");
   orbClicked = true;
   fullMana();
-  // console.log("CLICK ORB: " + mana + " mana");
 
   energySprite.removeEventListener("mousedown", clickOrb);
 
@@ -18,8 +18,12 @@ function clickOrb() {
     // console.log("RESET ORB");
     energyContainer.style.visibility = "hidden";
     energyContainer.classList.remove("pauseAnimation");
-    energyContainer.classList.remove("energy_move");
+    energyContainer.classList.remove("energy_path1");
+    energyContainer.classList.remove("energy_path2");
+    // energyContainer.className = '';
+    
     energySprite.classList.remove("energy_click");
+
     spawnOrb();
   }
 }
@@ -28,9 +32,17 @@ function spawnOrb() {
   // console.log("SPAWN ORB");
 
   void energyContainer.offsetLeft;
+
+  if(Math.random() < 0.5) {
+    energyContainer.classList.add("energy_path1");
+    
+  } else {
+    energyContainer.classList.add("energy_path2");
+
+  }
   energyContainer.style.visibility = "visible";
   energySprite.addEventListener("mousedown", clickOrb);
-  energyContainer.classList.add("energy_move");
   energySprite.classList.add("energy_idle");
-  setTimeout(() => {}, 100);
+
+  
 }
