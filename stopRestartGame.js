@@ -5,6 +5,8 @@
 function stopGame() {
   // console.log("STOP GAME");
 
+  document.querySelector("#health_low_sound").pause();
+
   hasGameFinished = true;
   orcsAttacking = 0;
 

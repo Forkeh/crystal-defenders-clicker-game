@@ -76,5 +76,6 @@ function reaperDeath() {
 
 function reaperGameOver() {
   console.log("REAPER GAME OVER");
+  soundCrystalDeath();
   gameOverScreen();
 }

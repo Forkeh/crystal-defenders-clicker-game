@@ -4,14 +4,14 @@ function musicTitle() {
   document.querySelector("#musicTitle").currentTime = 0;
   document.querySelector("#musicTitle").volume = 0.2;
   document.querySelector("#musicTitle").play();
-}
+} 
 
 function musicGame() {
   document.querySelector("#musicTitle").pause();
   document.querySelector("#musicVictory").pause();
   document.querySelector("#musicDefeat").pause();
   document.querySelector("#musicGame").currentTime = 0;
-  document.querySelector("#musicGame").volume = 0.1;
+  document.querySelector("#musicGame").volume = 0.05;
   document.querySelector("#musicGame").play();
 }
 
@@ -80,6 +80,12 @@ function soundCrystalHit() {
   }
 }
 
+function soundCrystalDeath() {
+  document.querySelector("#crystal_death").currentTime = 0;
+  document.querySelector("#crystal_death").volume = 0.4;
+  document.querySelector("#crystal_death").play();
+}
+
 function soundClickOrc() {
   if (Math.random() > 0.8) {
     document.querySelector("#orcDeath1").currentTime = 0;
@@ -129,4 +135,16 @@ function soundReaperDeath() {
   document.querySelector("#reaper_death").currentTime = 0;
   document.querySelector("#reaper_death").volume = 0.5;
   document.querySelector("#reaper_death").play();
+}
+
+function soundHealthLow() {
+  document.querySelector("#health_low_sound").currentTime = 0;
+  document.querySelector("#health_low_sound").volume = 0.7;
+  document.querySelector("#health_low_sound").play();
+}
+
+function sound10SecondsCountdown() {
+  document.querySelector("#ten_seconds_sound").currentTime = 0;
+  document.querySelector("#ten_seconds_sound").volume = 0.3;
+  document.querySelector("#ten_seconds_sound").play();
 }

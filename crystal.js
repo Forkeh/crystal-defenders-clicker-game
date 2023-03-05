@@ -19,9 +19,11 @@ function crystalHealth() {
     }
     if (crystalHP < 25) {
       document.querySelector("#healthText").classList.add("critical_health");
+      soundHealthLow();
     }
     if (crystalHP === 0) {
       console.log("YOU LOSE");
+      soundCrystalDeath();
       gameOverScreen();
       return;
     }
