@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- ORC RANDOM SPAWN DELAY ---------- //
 function randomSpawnDelay() {
   const delay = Math.floor(Math.random() * 5000) + 1000;
@@ -37,9 +39,8 @@ function Orc1Spawn() {
 }
 
 function orc1Click() {
-  console.log("CLICK ORC1");
+  // console.log("CLICK ORC1");
 
-  
   if (mana > 0) {
     soundClickOrc();
 
@@ -84,9 +85,7 @@ function orc1Attack() {
   }
   console.log("ORCS ATTACKING: " + orcsAttacking);
 
-
   orc1_container.removeEventListener("animationend", orc1Attack);
-  
 
   orc1_sprite.classList.add("orc_attack");
   orc1_sprite.setAttribute("src", "images/Orc/orc_attack1.png");
@@ -113,9 +112,8 @@ function Orc2Spawn() {
 }
 
 function orc2Click() {
-  console.log("CLICK ORC2");
+  // console.log("CLICK ORC2");
 
-  
   if (mana > 0) {
     soundClickOrc();
 
@@ -189,7 +187,6 @@ function Orc3Spawn() {
 function orc3Click() {
   console.log("CLICK ORC3");
 
-  
   if (mana > 0) {
     soundClickOrc();
 
@@ -261,9 +258,8 @@ function Orc4Spawn() {
 }
 
 function orc4Click() {
-  console.log("CLICK ORC4");
+  // console.log("CLICK ORC4");
 
-  
   if (mana > 0) {
     soundClickOrc();
 
@@ -335,9 +331,8 @@ function Orc5Spawn() {
 }
 
 function orc5Click() {
-  console.log("CLICK ORC5");
+  // console.log("CLICK ORC5");
 
-  
   if (mana > 0) {
     soundClickOrc();
 

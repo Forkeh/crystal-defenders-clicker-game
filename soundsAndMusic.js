@@ -1,3 +1,5 @@
+"use strict";
+
 function musicTitle() {
   document.querySelector("#musicTitle").currentTime = 0;
   document.querySelector("#musicTitle").volume = 0.2;

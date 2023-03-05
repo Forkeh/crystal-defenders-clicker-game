@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- MANA ORB ---------- //
 
 function clickOrb() {
@@ -21,7 +23,7 @@ function clickOrb() {
     energyContainer.classList.remove("energy_path1");
     energyContainer.classList.remove("energy_path2");
     // energyContainer.className = '';
-    
+
     energySprite.classList.remove("energy_click");
 
     spawnOrb();
@@ -33,16 +35,12 @@ function spawnOrb() {
 
   void energyContainer.offsetLeft;
 
-  if(Math.random() < 0.5) {
+  if (Math.random() < 0.5) {
     energyContainer.classList.add("energy_path1");
-    
   } else {
     energyContainer.classList.add("energy_path2");
-
   }
   energyContainer.style.visibility = "visible";
   energySprite.addEventListener("mousedown", clickOrb);
   energySprite.classList.add("energy_idle");
-
-  
 }

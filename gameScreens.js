@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- SHOW GAME SCREENS ---------- //
 
 function startGameButton() {

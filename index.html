@@ -13,18 +13,13 @@
   <title>Clicker Game - Crystal Defender</title>
 </head>
 
-  <body>
+<body>
 
   <div id="screen">
     <div id="game">
       <div id="game_background"></div>
 
       <div id="game_elements">
-
-        <div id="ligntningStrike_container" class="ligntningStrike_sprite">
-          <img class="spriteWidth" id="ligntingStrike_sprite" src="./images/Lightning/lightningStrike.png"
-            alt="lightning_strike" />
-        </div>
 
         <!---------- Orc elements ---------->
         <div id="orc1_container">
@@ -90,18 +85,21 @@
           <img class="spriteWidth" src="images\GUI\time_board.png" alt="time_board" />
         </div>
         <div id="boss_approaching_text" class="hidden">BOSS APPROACING!</div>
-        <div id="border_flash">
-          <img id="borderFlash" class="spriteWidth" src="./images/border_flash.png" alt="border_flash" />
-        </div>
       </div>
     </div>
     <!---------- Screens elements ---------->
     <div id="start">
       <div id="start_window" class="screen_enter">
         <div id="start_text">
-          <h1 class="screen_titles"><img src="images\logo.png" alt="" srcset="">
-</h1>
-          Press the button to the start the game!
+          <div class="screen_titles"><img src="images\logo.png" alt="" srcset="">
+          </div>
+          <p>
+          <h2>How to play</h2>
+          </p>
+          <p>Defend the crystal from enemies until the <span class="brown">timer</span> ends</p>
+          <p>The crystal loses <span class="red">health</span> while under attack</p>
+          <p>Clicking uses up <span class="blue">mana</span>, click wisely!</p>
+          <p>Click the flying <span class="yellow">orbs</span> to regain mana</p>
           <button class="screenButton" id="startGameButton">Start Game</button>
         </div>
       </div>

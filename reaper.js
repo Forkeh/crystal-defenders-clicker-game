@@ -1,3 +1,5 @@
+"use strict";
+
 function reaperSpawn() {
   reaperSpawnTimerId = setTimeout(() => {
     console.log("REAPER SPAWN");
@@ -38,7 +40,7 @@ function reaperClick() {
     reaperHP--;
 
     reaper_hp_text.innerHTML = reaperHP + " HP";
-    
+
     if (reaperHP > 0) {
       console.log(`REAPER HP: ${reaperHP}`);
       // reaper_sprite.classList.add("reaper_click");

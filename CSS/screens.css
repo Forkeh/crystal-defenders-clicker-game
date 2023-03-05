@@ -1,6 +1,8 @@
 /*-------- Screens container setup --------*/
 
-#start, #game_over, #win {
+#start,
+#game_over,
+#win {
   grid-area: 1/1;
   width: 100%;
   height: 100%;
@@ -10,12 +12,15 @@
 }
 
 /*-------- Lose and win containers hidden on startup --------*/
-#game_over, #win {
-visibility: hidden;
+#game_over,
+#win {
+  visibility: hidden;
 }
 
 /*-------- Screens windows setup --------*/
-#start_window, #game_over_window, #win_window {
+#start_window,
+#game_over_window,
+#win_window {
   grid-area: 1/1;
   width: 100%;
   height: 100%;
@@ -23,21 +28,87 @@ visibility: hidden;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  position: relative; 
+  position: relative;
 }
 
-/*-------- Window text --------*/
-#start_text, #game_over_text, #win_text {
+/*-------- Screens Button styling --------*/
+.screenButton {
+  font-family: "Labrada", serif;
+  width: 47%;
+  font-size: 4vw;
+  font-weight: 1000;
+  position: absolute;
+  top: 123%;
+  left: 26%;
+  background-color: transparent;
+  color: #965e19;
+  border: none;
+  text-shadow: 0.1vw 0.1vw 0vw black;
+  /* transition: 0.5s; */
+}
+
+.screenButton:hover {
+  transform: scale(103%);
+  transition: 0.5s;
+  text-shadow: 0.1vw 0.1vw 0vw black, 0.2vw 0.2vw 0.5vw black;
+}
+
+.screenButton:active {
+  transform: scale(97%);
+  transition: 0.2s;
+  text-shadow: 0vw 0vw 0vw black;
+}
+
+/*-------- Start Screen Text --------*/
+#start_text {
   width: 60%;
-  top: 20%;
+  top: 16%;
   left: 20%;
   position: absolute;
   font-size: 2vw;
   text-align: center;
 }
 
-#start_text h1 {
-  font-size: 6vw;
+#start_text p {
+  margin: 0;
+}
+
+#start_text button {
+  top: 106%;
+}
+
+#start_text .brown {
+  color: rgb(255, 166, 0);
+  font-weight: 900;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+#start_text .blue {
+  color: rgb(0, 191, 255);
+  font-weight: 900;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+#start_text .yellow {
+  color: rgb(255, 221, 0);
+  font-weight: 900;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+#start_text .red {
+  color: rgb(255, 0, 0);
+  font-weight: 900;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+/*-------- Win and Game Over Screen Text --------*/
+#game_over_text,
+#win_text {
+  width: 60%;
+  top: 20%;
+  left: 20%;
+  position: absolute;
+  font-size: 2vw;
   text-align: center;
 }
 

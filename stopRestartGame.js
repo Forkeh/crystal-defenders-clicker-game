@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- STOP GAME ---------- //
 
 function stopGame() {
@@ -66,23 +68,25 @@ function restartGame() {
 
   soundClickButton();
 
-  game_over.querySelector("button").removeEventListener("mousedown", restartGame);
+  game_over
+    .querySelector("button")
+    .removeEventListener("mousedown", restartGame);
   win.querySelector("button").removeEventListener("mousedown", restartGame);
 
   document.querySelector("#win").classList.add("screen_black_exit");
   document.querySelector("#win_window").classList.add("screen_exit");
   document.querySelector("#game_over").classList.add("screen_black_exit");
   document.querySelector("#game_over_window").classList.add("screen_exit");
-  
-countdown = initialCountdown;
-crystalHP = initialCrystalHP;
-reaperHP = InitialReaperHP;
-crystalHPSpeed = 200;
-mana = 4;
-kills = 0;
-orcsAttacking = 0;
-orbClicked = false;
-hasGameFinished = false;
+
+  countdown = initialCountdown;
+  crystalHP = initialCrystalHP;
+  reaperHP = InitialReaperHP;
+  crystalHPSpeed = 200;
+  mana = 4;
+  kills = 0;
+  orcsAttacking = 0;
+  orbClicked = false;
+  hasGameFinished = false;
 
   setTimeout(() => {
     document.querySelector("#win").classList.remove("screen_black_exit");
@@ -93,7 +97,6 @@ hasGameFinished = false;
     document.querySelector("#game_over").style.visibility = "hidden";
   }, 800);
 
-  
   elementsShow();
   fullMana();
   // resetOrb();

@@ -1,5 +1,7 @@
+"use strict";
+
 function elementsShow() {
-  console.log("SHOW ELEMENTS");
+  // console.log("SHOW ELEMENTS");
   energyContainer.classList.remove("hidden");
   crystalContainer.classList.remove("hidden");
   wizardContainer.classList.remove("hidden");
@@ -17,11 +19,10 @@ function elementsShow() {
   orc6_sprite.classList.remove("hidden");
   reaper_container.classList.remove("hidden");
   reaper_sprite.classList.remove("hidden");
-  
 }
 
 function elementsHide() {
-  console.log("HIDDEN ELEMENTS");
+  // console.log("HIDDEN ELEMENTS");
   energyContainer.classList.add("hidden");
   crystalContainer.classList.add("hidden");
   wizardContainer.classList.add("hidden");

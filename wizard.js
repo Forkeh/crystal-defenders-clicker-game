@@ -1,3 +1,5 @@
+"use strict";
+
 // ---------- WIZARD ATTACK ---------- //
 
 function wizardAttack() {
