@@ -17,6 +17,7 @@ function elementsShow() {
   orc6_sprite.classList.remove("hidden");
   reaper_container.classList.remove("hidden");
   reaper_sprite.classList.remove("hidden");
+  
 }
 
 function elementsHide() {

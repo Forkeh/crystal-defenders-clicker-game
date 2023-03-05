@@ -3,13 +3,15 @@
 function startGameButton() {
   // console.log('START GAME BUTTON');
 
+  soundClickButton();
+
   document.querySelector("#start_window").classList.remove("screen_enter");
   document.querySelector("#start_window").classList.add("screen_exit");
   document.querySelector("#start").classList.add("screen_black_exit");
   setTimeout(() => {
     document.querySelector("#start").classList.add("hidden");
     startGame();
-  }, 1000);
+  }, 800);
 }
 
 function winScreen() {

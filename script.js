@@ -3,7 +3,7 @@
 window.addEventListener("load", programStart);
 
 // ---------- GAME VARIABLES ---------- //
-const initialCountdown = 60; // How long the player has to survive to win
+const initialCountdown = 6; // How long the player has to survive to win
 let countdown = initialCountdown;
 const initialCrystalHP = 100; // How much HP the player has
 let crystalHP = initialCrystalHP;

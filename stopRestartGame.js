@@ -55,7 +55,7 @@ function stopGame() {
   reaper_sprite.className = "";
 
   boss_approaching_text.className = "";
-  
+
   elementsHide();
 }
 
@@ -63,8 +63,11 @@ function stopGame() {
 
 function restartGame() {
   console.log("RESTART GAME");
-// document.querySelector("#win").classList.remove("screen_black_enter");
-// document.querySelector("#win_window").classList.remove("screen_enter");
+
+  soundClickButton();
+
+  // document.querySelector("#win").classList.remove("screen_black_enter");
+  // document.querySelector("#win_window").classList.remove("screen_enter");
   document.querySelector("#win").classList.add("screen_black_exit");
   document.querySelector("#win_window").classList.add("screen_exit");
   document.querySelector("#game_over").classList.add("screen_black_exit");
@@ -77,9 +80,8 @@ function restartGame() {
     document.querySelector("#game_over_window").classList.remove("screen_exit");
     document.querySelector("#win").style.visibility = "hidden";
     document.querySelector("#game_over").style.visibility = "hidden";
-  }, 1000);
-  
-  
+  }, 800);
+
   countdown = initialCountdown;
   crystalHP = initialCrystalHP;
   reaperHP = InitialReaperHP;
@@ -93,5 +95,4 @@ function restartGame() {
   fullMana();
   // resetOrb();
   startGame();
-
 }

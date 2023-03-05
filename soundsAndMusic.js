@@ -32,6 +32,12 @@ function musicDefeat() {
   document.querySelector("#musicDefeat").play();
 }
 
+function soundClickButton() {
+  document.querySelector("#button_click_sound").currentTime = 0;
+  document.querySelector("#button_click_sound").volume = 0.4;
+  document.querySelector("#button_click_sound").play();
+}
+
 function soundClickScreen() {
   if (Math.random() < 0.5) {
     document.querySelector("#clickSpell1").currentTime = 0;
