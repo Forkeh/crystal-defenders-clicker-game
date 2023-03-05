@@ -10,7 +10,17 @@ function countDown() {
     countdown--;
 
     if (countdown < 0) {
-      winScreen();
+      clearInterval(countdownIntervalId);
+      orc1Click();
+      orc2Click();
+      orc3Click();
+      orc4Click();
+      orc5Click();
+      orc6Click();
+
+      setTimeout(() => {
+        winScreen();
+      }, 1400);
     } else if (countdown === 9) {
       sound10SecondsCountdown();
     } else if (hasGameFinished) {
