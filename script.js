@@ -54,7 +54,7 @@ const boss_approaching_text = document.querySelector("#boss_approaching_text");
 
 // ---------- GAME START ---------- //
 function programStart() {
-  // musicTitle();
+  musicTitle();
   elementsHide();
   start.querySelector("button").addEventListener("mousedown", startGameButton);
 
