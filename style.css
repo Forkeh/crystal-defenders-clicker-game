@@ -11,6 +11,7 @@ body {
   font-family: 'Labrada', serif;
   user-select: none;
   cursor: url('images/GUI/largestCursor.cur'), auto;
+  background-color: black;
 }
 
 img {

@@ -499,6 +499,7 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  image-rendering: optimizeSpeed;
 }
 
 @keyframes screen_enter {

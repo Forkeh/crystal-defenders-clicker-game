@@ -16,7 +16,7 @@ let orcsAttacking = 0; // Keeps track of how many orcs are hitting the crystal
 let orbClicked = false;
 let hasGameFinished = false;
 
-// Timer Id's, using these to stop timers if game ends
+// Timer Id's, using these to stop timers when game ends
 let orc1SpawnTimerId;
 let orc2SpawnTimerId;
 let orc3SpawnTimerId;

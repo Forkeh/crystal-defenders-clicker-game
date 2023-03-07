@@ -2,7 +2,7 @@
 
 function reaperSpawn() {
   reaperSpawnTimerId = setTimeout(() => {
-    console.log("REAPER SPAWN");
+    // console.log("REAPER SPAWN");
 
     soundBossApproaching();
 
@@ -21,19 +21,17 @@ function reaperSpawn() {
 }
 
 function reaperAttack() {
-  console.log("REAPER ATTACK");
+  // console.log("REAPER ATTACK");
   reaper_container.style.pointerEvents = "none";
   reaper_sprite.setAttribute("src", "images/Reaper/reaper_attack.png");
   reaper_container.removeEventListener("animationend", reaperAttack);
-  // reaper_container.classList.add("reaper_attack");
-  // reaper_container.addEventListener("animationend", reaperGameOver);
   setTimeout(() => {
     reaperGameOver();
   }, 1000);
 }
 
 function reaperClick() {
-  console.log(`CLICK REAPER`);
+  // console.log(`CLICK REAPER`);
   if (mana > 0) {
     soundReaperHit();
 
@@ -52,7 +50,7 @@ function reaperClick() {
 }
 
 function reaperDeath() {
-  console.log("REAPER DEATH");
+  // console.log("REAPER DEATH");
 
   soundReaperDeath();
 
@@ -75,7 +73,7 @@ function reaperDeath() {
 }
 
 function reaperGameOver() {
-  console.log("REAPER GAME OVER");
+  // console.log("REAPER GAME OVER");
   soundCrystalDeath();
   gameOverScreen();
 }
