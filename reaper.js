@@ -18,10 +18,14 @@ function reaperSpawn() {
 
     let reaper_path_anim = document.querySelector(".reaper_path");
 
-    reaper_path_anim.addEventListener("animationend", reaperAttack);
+    reaper_path_anim.addEventListener("animationend", function(event) {
+if (event.target === reaper_path_anim) {
+    reaperAttack();
+}});
+    
     // reaper_container.removeEventListener("animationend", reaperAttack); //Don't know why this needs to be here, would think line above would be enough
     reaper_container.addEventListener("mousedown", reaperClick);
-  }, 40000);
+  }, 35000);
 }
 
 function reaperAttack() {
@@ -45,9 +49,9 @@ function reaperClick() {
 
     if (reaperHP > 0) {
       console.log(`REAPER HP: ${reaperHP}`);
-      // reaper_sprite.classList.remove("reaper_click");
-      // reaper_sprite.offsetHeight;
-      // reaper_sprite.classList.add("reaper_click");
+      reaper_sprite.classList.remove("reaper_click");
+      reaper_sprite.offsetHeight;
+      reaper_sprite.classList.add("reaper_click");
     } else if (reaperHP === 0) {
       reaper_hp_text.style.visibility = "hidden";
       reaperDeath();
